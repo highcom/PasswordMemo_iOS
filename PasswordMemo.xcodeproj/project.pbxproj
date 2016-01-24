@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B3964C431C54724D00420B4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3964C421C54724D00420B4F /* AppDelegate.swift */; };
+		B3964C451C54724D00420B4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3964C441C54724D00420B4F /* ViewController.swift */; };
+		B3964C481C54724D00420B4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3964C461C54724D00420B4F /* Main.storyboard */; };
+		B3964C4B1C54724D00420B4F /* PasswordMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3964C491C54724D00420B4F /* PasswordMemo.xcdatamodeld */; };
+		B3964C4D1C54724D00420B4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3964C4C1C54724D00420B4F /* Assets.xcassets */; };
+		B3964C501C54724D00420B4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3964C4E1C54724D00420B4F /* LaunchScreen.storyboard */; };
+		B3964C5B1C54724D00420B4F /* PasswordMemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3964C5A1C54724D00420B4F /* PasswordMemoTests.swift */; };
+		B3964C661C54724D00420B4F /* PasswordMemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3964C651C54724D00420B4F /* PasswordMemoUITests.swift */; };
+		B3964C741C5474D500420B4F /* PasswordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3964C731C5474D500420B4F /* PasswordListView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B3964C571C54724D00420B4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3964C371C54724D00420B4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3964C3E1C54724D00420B4F;
+			remoteInfo = PasswordMemo;
+		};
+		B3964C621C54724D00420B4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3964C371C54724D00420B4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3964C3E1C54724D00420B4F;
+			remoteInfo = PasswordMemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B3964C3F1C54724D00420B4F /* PasswordMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3964C421C54724D00420B4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B3964C441C54724D00420B4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B3964C471C54724D00420B4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B3964C4A1C54724D00420B4F /* PasswordMemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PasswordMemo.xcdatamodel; sourceTree = "<group>"; };
+		B3964C4C1C54724D00420B4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B3964C4F1C54724D00420B4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B3964C511C54724D00420B4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3964C561C54724D00420B4F /* PasswordMemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordMemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3964C5A1C54724D00420B4F /* PasswordMemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordMemoTests.swift; sourceTree = "<group>"; };
+		B3964C5C1C54724D00420B4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3964C611C54724D00420B4F /* PasswordMemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordMemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3964C651C54724D00420B4F /* PasswordMemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordMemoUITests.swift; sourceTree = "<group>"; };
+		B3964C671C54724D00420B4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3964C731C5474D500420B4F /* PasswordListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordListView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B3964C3C1C54724D00420B4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3964C531C54724D00420B4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3964C5E1C54724D00420B4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B3964C361C54724D00420B4F = {
+			isa = PBXGroup;
+			children = (
+				B3964C411C54724D00420B4F /* PasswordMemo */,
+				B3964C591C54724D00420B4F /* PasswordMemoTests */,
+				B3964C641C54724D00420B4F /* PasswordMemoUITests */,
+				B3964C401C54724D00420B4F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B3964C401C54724D00420B4F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B3964C3F1C54724D00420B4F /* PasswordMemo.app */,
+				B3964C561C54724D00420B4F /* PasswordMemoTests.xctest */,
+				B3964C611C54724D00420B4F /* PasswordMemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B3964C411C54724D00420B4F /* PasswordMemo */ = {
+			isa = PBXGroup;
+			children = (
+				B3964C421C54724D00420B4F /* AppDelegate.swift */,
+				B3964C441C54724D00420B4F /* ViewController.swift */,
+				B3964C461C54724D00420B4F /* Main.storyboard */,
+				B3964C4C1C54724D00420B4F /* Assets.xcassets */,
+				B3964C4E1C54724D00420B4F /* LaunchScreen.storyboard */,
+				B3964C511C54724D00420B4F /* Info.plist */,
+				B3964C491C54724D00420B4F /* PasswordMemo.xcdatamodeld */,
+				B3964C731C5474D500420B4F /* PasswordListView.swift */,
+			);
+			path = PasswordMemo;
+			sourceTree = "<group>";
+		};
+		B3964C591C54724D00420B4F /* PasswordMemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				B3964C5A1C54724D00420B4F /* PasswordMemoTests.swift */,
+				B3964C5C1C54724D00420B4F /* Info.plist */,
+			);
+			path = PasswordMemoTests;
+			sourceTree = "<group>";
+		};
+		B3964C641C54724D00420B4F /* PasswordMemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B3964C651C54724D00420B4F /* PasswordMemoUITests.swift */,
+				B3964C671C54724D00420B4F /* Info.plist */,
+			);
+			path = PasswordMemoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B3964C3E1C54724D00420B4F /* PasswordMemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3964C6A1C54724D00420B4F /* Build configuration list for PBXNativeTarget "PasswordMemo" */;
+			buildPhases = (
+				B3964C3B1C54724D00420B4F /* Sources */,
+				B3964C3C1C54724D00420B4F /* Frameworks */,
+				B3964C3D1C54724D00420B4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PasswordMemo;
+			productName = PasswordMemo;
+			productReference = B3964C3F1C54724D00420B4F /* PasswordMemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B3964C551C54724D00420B4F /* PasswordMemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3964C6D1C54724D00420B4F /* Build configuration list for PBXNativeTarget "PasswordMemoTests" */;
+			buildPhases = (
+				B3964C521C54724D00420B4F /* Sources */,
+				B3964C531C54724D00420B4F /* Frameworks */,
+				B3964C541C54724D00420B4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3964C581C54724D00420B4F /* PBXTargetDependency */,
+			);
+			name = PasswordMemoTests;
+			productName = PasswordMemoTests;
+			productReference = B3964C561C54724D00420B4F /* PasswordMemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B3964C601C54724D00420B4F /* PasswordMemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3964C701C54724D00420B4F /* Build configuration list for PBXNativeTarget "PasswordMemoUITests" */;
+			buildPhases = (
+				B3964C5D1C54724D00420B4F /* Sources */,
+				B3964C5E1C54724D00420B4F /* Frameworks */,
+				B3964C5F1C54724D00420B4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3964C631C54724D00420B4F /* PBXTargetDependency */,
+			);
+			name = PasswordMemoUITests;
+			productName = PasswordMemoUITests;
+			productReference = B3964C611C54724D00420B4F /* PasswordMemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B3964C371C54724D00420B4F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = HIGHCOM;
+				TargetAttributes = {
+					B3964C3E1C54724D00420B4F = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					B3964C551C54724D00420B4F = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = B3964C3E1C54724D00420B4F;
+					};
+					B3964C601C54724D00420B4F = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = B3964C3E1C54724D00420B4F;
+					};
+				};
+			};
+			buildConfigurationList = B3964C3A1C54724D00420B4F /* Build configuration list for PBXProject "PasswordMemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B3964C361C54724D00420B4F;
+			productRefGroup = B3964C401C54724D00420B4F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B3964C3E1C54724D00420B4F /* PasswordMemo */,
+				B3964C551C54724D00420B4F /* PasswordMemoTests */,
+				B3964C601C54724D00420B4F /* PasswordMemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B3964C3D1C54724D00420B4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3964C501C54724D00420B4F /* LaunchScreen.storyboard in Resources */,
+				B3964C4D1C54724D00420B4F /* Assets.xcassets in Resources */,
+				B3964C481C54724D00420B4F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3964C541C54724D00420B4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3964C5F1C54724D00420B4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B3964C3B1C54724D00420B4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3964C451C54724D00420B4F /* ViewController.swift in Sources */,
+				B3964C431C54724D00420B4F /* AppDelegate.swift in Sources */,
+				B3964C4B1C54724D00420B4F /* PasswordMemo.xcdatamodeld in Sources */,
+				B3964C741C5474D500420B4F /* PasswordListView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3964C521C54724D00420B4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3964C5B1C54724D00420B4F /* PasswordMemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3964C5D1C54724D00420B4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3964C661C54724D00420B4F /* PasswordMemoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B3964C581C54724D00420B4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3964C3E1C54724D00420B4F /* PasswordMemo */;
+			targetProxy = B3964C571C54724D00420B4F /* PBXContainerItemProxy */;
+		};
+		B3964C631C54724D00420B4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3964C3E1C54724D00420B4F /* PasswordMemo */;
+			targetProxy = B3964C621C54724D00420B4F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B3964C461C54724D00420B4F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3964C471C54724D00420B4F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B3964C4E1C54724D00420B4F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3964C4F1C54724D00420B4F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B3964C681C54724D00420B4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B3964C691C54724D00420B4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B3964C6B1C54724D00420B4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PasswordMemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = highcom.PasswordMemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B3964C6C1C54724D00420B4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PasswordMemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = highcom.PasswordMemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B3964C6E1C54724D00420B4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PasswordMemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = highcom.PasswordMemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PasswordMemo.app/PasswordMemo";
+			};
+			name = Debug;
+		};
+		B3964C6F1C54724D00420B4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PasswordMemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = highcom.PasswordMemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PasswordMemo.app/PasswordMemo";
+			};
+			name = Release;
+		};
+		B3964C711C54724D00420B4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PasswordMemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = highcom.PasswordMemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PasswordMemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		B3964C721C54724D00420B4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PasswordMemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = highcom.PasswordMemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PasswordMemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B3964C3A1C54724D00420B4F /* Build configuration list for PBXProject "PasswordMemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3964C681C54724D00420B4F /* Debug */,
+				B3964C691C54724D00420B4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3964C6A1C54724D00420B4F /* Build configuration list for PBXNativeTarget "PasswordMemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3964C6B1C54724D00420B4F /* Debug */,
+				B3964C6C1C54724D00420B4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B3964C6D1C54724D00420B4F /* Build configuration list for PBXNativeTarget "PasswordMemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3964C6E1C54724D00420B4F /* Debug */,
+				B3964C6F1C54724D00420B4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B3964C701C54724D00420B4F /* Build configuration list for PBXNativeTarget "PasswordMemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3964C711C54724D00420B4F /* Debug */,
+				B3964C721C54724D00420B4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B3964C491C54724D00420B4F /* PasswordMemo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B3964C4A1C54724D00420B4F /* PasswordMemo.xcdatamodel */,
+			);
+			currentVersion = B3964C4A1C54724D00420B4F /* PasswordMemo.xcdatamodel */;
+			path = PasswordMemo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B3964C371C54724D00420B4F /* Project object */;
+}
