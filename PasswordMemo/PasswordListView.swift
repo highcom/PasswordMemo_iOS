@@ -18,7 +18,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     
     // テーブルの行数
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return PasswordEntity.sharedPasswordEntity.passwordItems.count
     }
     
     // テーブルの表示内容

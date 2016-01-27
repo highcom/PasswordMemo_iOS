@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B3040A561C57A00E00B73E4E /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3040A551C57A00E00B73E4E /* PasswordInputView.swift */; };
+		B3101A561C58EDE600611B99 /* PasswordEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3101A541C58EDE600611B99 /* PasswordEntity+CoreDataProperties.swift */; };
+		B3101A571C58EDE600611B99 /* PasswordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3101A551C58EDE600611B99 /* PasswordEntity.swift */; };
 		B3964C431C54724D00420B4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3964C421C54724D00420B4F /* AppDelegate.swift */; };
 		B3964C451C54724D00420B4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3964C441C54724D00420B4F /* ViewController.swift */; };
 		B3964C481C54724D00420B4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3964C461C54724D00420B4F /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		B3040A551C57A00E00B73E4E /* PasswordInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
+		B3101A541C58EDE600611B99 /* PasswordEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PasswordEntity+CoreDataProperties.swift"; path = "PasswordMemo/PasswordEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B3101A551C58EDE600611B99 /* PasswordEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PasswordEntity.swift; path = PasswordMemo/PasswordEntity.swift; sourceTree = "<group>"; };
 		B3964C3F1C54724D00420B4F /* PasswordMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3964C421C54724D00420B4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3964C441C54724D00420B4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 		B3964C361C54724D00420B4F = {
 			isa = PBXGroup;
 			children = (
+				B3101A541C58EDE600611B99 /* PasswordEntity+CoreDataProperties.swift */,
+				B3101A551C58EDE600611B99 /* PasswordEntity.swift */,
 				B3964C411C54724D00420B4F /* PasswordMemo */,
 				B3964C591C54724D00420B4F /* PasswordMemoTests */,
 				B3964C641C54724D00420B4F /* PasswordMemoUITests */,
@@ -268,8 +274,10 @@
 				B3964C451C54724D00420B4F /* ViewController.swift in Sources */,
 				B3040A561C57A00E00B73E4E /* PasswordInputView.swift in Sources */,
 				B3964C431C54724D00420B4F /* AppDelegate.swift in Sources */,
+				B3101A561C58EDE600611B99 /* PasswordEntity+CoreDataProperties.swift in Sources */,
 				B3964C4B1C54724D00420B4F /* PasswordMemo.xcdatamodeld in Sources */,
 				B3964C741C5474D500420B4F /* PasswordListView.swift in Sources */,
+				B3101A571C58EDE600611B99 /* PasswordEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
