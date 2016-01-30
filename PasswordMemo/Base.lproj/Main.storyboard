@@ -100,7 +100,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3nW-hJ-obk">
-                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PasswordCell" id="Ngh-e8-8mg">
@@ -140,29 +140,44 @@
                                 <rect key="frame" x="70" y="20" width="460" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eic-ar-TtJ">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <items>
-                                    <barButtonItem title="Setting" id="Fkk-b0-bFB"/>
-                                </items>
-                            </toolbar>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1i-9k-jZA">
+                                <rect key="frame" x="0.0" y="551" width="600" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items/>
+                            </tabBar>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2W-Bx-OJP">
+                                <rect key="frame" x="20" y="561" width="60" height="30"/>
+                                <state key="normal" title="Setting"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbr-Fd-H96">
+                                <rect key="frame" x="520" y="561" width="60" height="30"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="tapEdit:" destination="NDh-ze-oct" eventType="touchUpInside" id="p7w-Na-XF9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kKo-pJ-hyI" firstAttribute="leading" secondItem="rAi-gp-0Rh" secondAttribute="leadingMargin" constant="50" id="0Np-um-2I3"/>
-                            <constraint firstItem="eic-ar-TtJ" firstAttribute="leading" secondItem="rAi-gp-0Rh" secondAttribute="leadingMargin" constant="-20" id="47c-TU-Le6"/>
-                            <constraint firstItem="eic-ar-TtJ" firstAttribute="top" secondItem="3nW-hJ-obk" secondAttribute="bottom" id="9sC-h5-tqa"/>
+                            <constraint firstItem="Z1i-9k-jZA" firstAttribute="leading" secondItem="rAi-gp-0Rh" secondAttribute="leadingMargin" constant="-20" id="7pq-Lj-fF7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3nW-hJ-obk" secondAttribute="trailing" constant="-20" id="Awx-IE-Vf8"/>
+                            <constraint firstItem="b3n-eq-JpY" firstAttribute="top" secondItem="Z1i-9k-jZA" secondAttribute="bottom" id="EMy-zm-Sys"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kKo-pJ-hyI" secondAttribute="trailing" constant="50" id="GVd-3G-xo3"/>
-                            <constraint firstItem="eic-ar-TtJ" firstAttribute="top" secondItem="3nW-hJ-obk" secondAttribute="bottom" id="K2K-ZT-vlY"/>
+                            <constraint firstItem="Z1i-9k-jZA" firstAttribute="centerX" secondItem="rAi-gp-0Rh" secondAttribute="centerX" id="KNk-Ws-jkN"/>
                             <constraint firstItem="hgk-j3-0RY" firstAttribute="centerX" secondItem="rAi-gp-0Rh" secondAttribute="centerX" id="LR4-1z-ZJu"/>
-                            <constraint firstItem="b3n-eq-JpY" firstAttribute="top" secondItem="eic-ar-TtJ" secondAttribute="bottom" id="LZC-Ih-sZa"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eic-ar-TtJ" secondAttribute="trailing" constant="-20" id="UKd-GM-kGg"/>
+                            <constraint firstItem="e2W-Bx-OJP" firstAttribute="top" secondItem="3nW-hJ-obk" secondAttribute="bottom" constant="10" id="Re2-Be-UFa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z1i-9k-jZA" secondAttribute="trailing" constant="-20" id="Vxu-J0-cqs"/>
+                            <constraint firstItem="tbr-Fd-H96" firstAttribute="top" secondItem="3nW-hJ-obk" secondAttribute="bottom" constant="10" id="YeP-Ib-vfv"/>
                             <constraint firstItem="kKo-pJ-hyI" firstAttribute="centerX" secondItem="rAi-gp-0Rh" secondAttribute="centerX" id="Z4x-jH-oCU"/>
                             <constraint firstItem="hgk-j3-0RY" firstAttribute="leading" secondItem="rAi-gp-0Rh" secondAttribute="leadingMargin" constant="-20" id="f6r-iK-cEB"/>
+                            <constraint firstItem="b3n-eq-JpY" firstAttribute="top" secondItem="e2W-Bx-OJP" secondAttribute="bottom" constant="9" id="k71-uy-tlQ"/>
+                            <constraint firstItem="Z1i-9k-jZA" firstAttribute="top" secondItem="3nW-hJ-obk" secondAttribute="bottom" id="kFv-Jv-RB3"/>
                             <constraint firstItem="3nW-hJ-obk" firstAttribute="top" secondItem="kKo-pJ-hyI" secondAttribute="bottom" id="kZU-YR-ZbJ"/>
-                            <constraint firstItem="eic-ar-TtJ" firstAttribute="centerX" secondItem="rAi-gp-0Rh" secondAttribute="centerX" id="o2i-h9-z6u"/>
+                            <constraint firstItem="tbr-Fd-H96" firstAttribute="trailing" secondItem="rAi-gp-0Rh" secondAttribute="trailingMargin" id="nnh-kZ-jJP"/>
+                            <constraint firstItem="e2W-Bx-OJP" firstAttribute="leading" secondItem="rAi-gp-0Rh" secondAttribute="leadingMargin" id="oEo-lH-IqR"/>
                             <constraint firstItem="3nW-hJ-obk" firstAttribute="leading" secondItem="rAi-gp-0Rh" secondAttribute="leadingMargin" constant="-20" id="rWc-zW-R2e"/>
+                            <constraint firstItem="b3n-eq-JpY" firstAttribute="top" secondItem="tbr-Fd-H96" secondAttribute="bottom" constant="9" id="v4l-wm-v8G"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hgk-j3-0RY" secondAttribute="trailing" constant="-20" id="xTj-Nc-mI6"/>
                         </constraints>
                     </view>

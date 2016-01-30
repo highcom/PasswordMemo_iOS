@@ -11,6 +11,7 @@ import UIKit
 class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var passwordListView: UITableView!
 
+    var locale = NSLocale.currentLocale()
     let dateFormatter = NSDateFormatter()
     var editRow: Int = 0
     // 画面遷移時の状態
@@ -24,6 +25,14 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        PasswordEntity.sharedPasswordEntity.tableSearchText = ""
+        
+        // 日付表示フォーマットを指定
+        dateFormatter.locale = NSLocale(localeIdentifier: locale.description)
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        
+        PasswordEntity.sharedPasswordEntity.readPasswordData()
     }
     
     // テーブルの行数
@@ -51,6 +60,41 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
         
         return cell
     }
+    
+    // Cellを挿入または削除しようとした際に呼び出される
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        // 削除のとき.
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            
+            // 削除するセルのdisplayOrderを保持する
+            let delValue = PasswordEntity.sharedPasswordEntity.getItems(indexPath.row).displayOrder!.integerValue
+            
+            // CoreDataからレコードをを削除する
+            PasswordEntity.sharedPasswordEntity.deletePasswordData(PasswordEntity.sharedPasswordEntity.getItems(indexPath.row) as PasswordEntity)
+            
+            // 指定されたセルのオブジェクトをmyItemsから削除する.
+            PasswordEntity.sharedPasswordEntity.passwordItems.removeObjectAtIndex(delValue)
+            if PasswordEntity.sharedPasswordEntity.tableSearchText != "" {
+                PasswordEntity.sharedPasswordEntity.searchItems.removeObjectAtIndex(indexPath.row)
+            }
+            
+            // 削除したセル以降のdisplayOrderをつめる
+            for var i = delValue; i < PasswordEntity.sharedPasswordEntity.passwordItems.count; i++ {
+                let buffItem = PasswordEntity.sharedPasswordEntity.passwordItems[i] as! PasswordEntity
+                buffItem.displayOrder = buffItem.displayOrder!.integerValue - 1
+            }
+            
+            // TableViewを再読み込み.
+            tableView.reloadData()
+            
+            // データ数が0になった場合は編集モードをキャンセルする
+            if PasswordEntity.sharedPasswordEntity.passwordItems.count == 0 && editing {
+                super.setEditing(false, animated: true)
+                tableView.setEditing(false, animated: true)
+            }
+        }
+    }
 
     // 追加ボタン
     @IBAction func tapAddButton(sender: AnyObject) {
@@ -58,6 +102,67 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
         state = STATE.ST_ADD
         // データ入力のため詳細画面へ遷移する
         self.performSegueWithIdentifier("inputViewSegue", sender: nil)
+    }
+    
+    // 編集ボタン
+    @IBAction func tapEdit(sender: AnyObject) {
+        if editing {
+            super.setEditing(false, animated: true)
+            passwordListView.setEditing(false, animated: true)
+        } else {
+            super.setEditing(true, animated: true)
+            passwordListView.setEditing(true, animated: true)
+        }
+    }
+    
+    // 並べ替えをできるようにする
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        // 並べ替えたら、その順番でCoreDataに保存する
+        let srcIndex = sourceIndexPath.row
+        let desIndex = destinationIndexPath.row
+        var minIndex = 0
+        var maxIndex = 0
+        var isMoveDir = false
+        
+        if srcIndex == desIndex {
+            return
+        } else if srcIndex < desIndex {
+            minIndex = srcIndex
+            maxIndex = desIndex
+            isMoveDir = true
+        } else {
+            minIndex = desIndex
+            maxIndex = srcIndex
+            isMoveDir = false
+        }
+        
+        for var i = minIndex; i <= maxIndex; i++ {
+            var newOrder = 0
+            if i == srcIndex {
+                newOrder = desIndex
+            } else if isMoveDir {
+                let buffItem = PasswordEntity.sharedPasswordEntity.passwordItems[i] as! PasswordEntity
+                newOrder = (buffItem.displayOrder?.integerValue)! - 1
+            } else {
+                let buffItem = PasswordEntity.sharedPasswordEntity.passwordItems[i] as! PasswordEntity
+                newOrder = (buffItem.displayOrder?.integerValue)! + 1
+            }
+            PasswordEntity.sharedPasswordEntity.passwordItems[i].setValue(newOrder, forKey: "displayOrder")
+        }
+        // 現在の状態を保存する
+        PasswordEntity.sharedPasswordEntity.savePasswordData()
+        // 順番が変わったのでデータを再読込する
+        PasswordEntity.sharedPasswordEntity.readPasswordData()
+    }
+    
+    // 検索状態に応じてtableViewを並べ替え可能・不可能を設定
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // 検索中でない場合は並べ替えを可能とする
+        if PasswordEntity.sharedPasswordEntity.tableSearchText == "" {
+            return true
+        } else {
+            return false
+        }
     }
     
     // 入力画面のキャンセルボタン
