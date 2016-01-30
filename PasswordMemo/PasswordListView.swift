@@ -11,6 +11,8 @@ import UIKit
 class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var passwordListView: UITableView!
 
+    let dateFormatter = NSDateFormatter()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -24,13 +26,20 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     // テーブルの表示内容
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = passwordListView.dequeueReusableCellWithIdentifier("PasswordCell")! as UITableViewCell
+        let pwItem = PasswordEntity.sharedPasswordEntity.getItems(indexPath.row)
+        
         // タイトルタグを取得
         let title = cell.viewWithTag(1) as! UILabel
-        title.text = "Title"
+        title.text = pwItem.titleName
         
         // 日付タグを取得
-        let date = cell.viewWithTag(2) as! UILabel
-        date.text = "2015/12/31"
+        let updateDate = cell.viewWithTag(2) as! UILabel
+        let date:NSDate? = pwItem.updateDate
+        if date == nil {
+            updateDate.text = ""
+        } else {
+            updateDate.text = dateFormatter.stringFromDate(date!)
+        }
         
         return cell
     }
