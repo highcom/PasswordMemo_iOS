@@ -62,7 +62,7 @@ class PasswordEntity: NSManagedObject {
     }
     
     // CoreDataからレコードの読み込み
-    func readMemoData() {
+    func readPasswordData() {
         let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let myContext: NSManagedObjectContext = appDel.managedObjectContext
         
@@ -82,7 +82,7 @@ class PasswordEntity: NSManagedObject {
     }
 
     // CoreDataのレコードを更新
-    func updateMemoData(editRow: Int, title: String, account: String, password: String, memo: String) {
+    func updatePasswordData(editRow: Int, title: String, account: String, password: String, memo: String) {
         let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let myContext: NSManagedObjectContext = appDel.managedObjectContext
         
@@ -105,7 +105,7 @@ class PasswordEntity: NSManagedObject {
     }
     
     // CoreDataのレコードから部分一致検索
-    func searchMemoData() {
+    func searchPasswordMemoData() {
         let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let myContext: NSManagedObjectContext = appDel.managedObjectContext
         
@@ -133,7 +133,7 @@ class PasswordEntity: NSManagedObject {
     }
     
     // CoreDataの現在の状態を保存
-    func saveMemoData() {
+    func savePasswordData() {
         let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let myContext: NSManagedObjectContext = appDel.managedObjectContext
         
@@ -149,7 +149,7 @@ class PasswordEntity: NSManagedObject {
     }
     
     // CoreDataのレコードの削除
-    func deleteMemoData(object: NSManagedObject) {
+    func deletePasswordData(object: NSManagedObject) {
         // CoreDataの読み込み処理
         let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let myContext: NSManagedObjectContext = appDel.managedObjectContext
