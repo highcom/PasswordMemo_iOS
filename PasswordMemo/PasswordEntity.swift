@@ -105,7 +105,7 @@ class PasswordEntity: NSManagedObject {
     }
     
     // CoreDataのレコードから部分一致検索
-    func searchPasswordMemoData() {
+    func searchPasswordData() {
         let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let myContext: NSManagedObjectContext = appDel.managedObjectContext
         

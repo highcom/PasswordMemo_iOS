@@ -139,6 +139,9 @@
                             <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kKo-pJ-hyI">
                                 <rect key="frame" x="70" y="20" width="460" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="NDh-ze-oct" id="dH3-oo-usQ"/>
+                                </connections>
                             </searchBar>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1i-9k-jZA">
                                 <rect key="frame" x="0.0" y="551" width="600" height="49"/>
@@ -149,8 +152,8 @@
                                 <rect key="frame" x="20" y="561" width="60" height="30"/>
                                 <state key="normal" title="Setting"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbr-Fd-H96">
-                                <rect key="frame" x="520" y="561" width="60" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbr-Fd-H96">
+                                <rect key="frame" x="550" y="561" width="30" height="30"/>
                                 <state key="normal" title="Edit"/>
                                 <connections>
                                     <action selector="tapEdit:" destination="NDh-ze-oct" eventType="touchUpInside" id="p7w-Na-XF9"/>

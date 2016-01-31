@@ -37,7 +37,15 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     
     // テーブルの行数
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return PasswordEntity.sharedPasswordEntity.passwordItems.count
+        var tableCount = 0
+        // 検索中か
+        if PasswordEntity.sharedPasswordEntity.tableSearchText == "" {
+            tableCount = PasswordEntity.sharedPasswordEntity.passwordItems.count
+        } else {
+            tableCount = PasswordEntity.sharedPasswordEntity.searchItems.count
+        }
+        
+        return tableCount
     }
     
     // テーブルの表示内容
@@ -106,6 +114,18 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     
     // 編集ボタン
     @IBAction func tapEdit(sender: AnyObject) {
+        var tableCount = 0
+        // 検索中か
+        if PasswordEntity.sharedPasswordEntity.tableSearchText == "" {
+            tableCount = PasswordEntity.sharedPasswordEntity.passwordItems.count
+        } else {
+            tableCount = PasswordEntity.sharedPasswordEntity.searchItems.count
+        }
+        // テーブルに表示されているデータが0件の場合には何もしない
+        if tableCount == 0 {
+            return
+        }
+        
         if editing {
             super.setEditing(false, animated: true)
             passwordListView.setEditing(false, animated: true)
@@ -163,6 +183,58 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
         } else {
             return false
         }
+    }
+    
+    // 検索バー入力開始時
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        // 検索バーを伸ばす
+        searchBar.frame = CGRectMake(searchBar.frame.origin.x, searchBar.frame.origin.y, searchBar.frame.width + 70, searchBar.frame.height)
+        // キャンセルボタンを有効化する
+        searchBar.showsCancelButton = true
+        // AutoResizeを無効化する
+        searchBar.translatesAutoresizingMaskIntoConstraints = true
+    }
+
+    // 検索バー入力イベント
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        // TODO: 検索バーで入力された文字列をCoreDataから検索
+        // テキストが変更される毎に呼ばれる
+        PasswordEntity.sharedPasswordEntity.tableSearchText = searchText
+        // CoreDataから検索する
+        PasswordEntity.sharedPasswordEntity.searchPasswordData()
+        // TableViewを再読み込み.
+        passwordListView.reloadData()
+    }
+    
+    // 検索ボタンが押下された場合
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        // キーボードをしまう
+        self.view.endEditing(true)
+        // CoreDataから検索する
+        PasswordEntity.sharedPasswordEntity.searchPasswordData()
+        // TableViewを再読み込み.
+        passwordListView.reloadData()
+    }
+    
+    // キャンセルボタンが押下された場合
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        // キーボードをしまう
+        self.view.endEditing(true)
+        // 文字列を初期化する
+        PasswordEntity.sharedPasswordEntity.tableSearchText = ""
+        searchBar.text = ""
+        // TableViewを再読み込み.
+        passwordListView.reloadData()
+    }
+    
+    // 検索バー入力終了時
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        // キャンセルボタンを無効化する
+        searchBar.showsCancelButton = false
+        // 検索バーを元のサイズに戻す
+        searchBar.frame = CGRectMake(searchBar.frame.origin.x, searchBar.frame.origin.y, searchBar.frame.width - 60, searchBar.frame.height)
+        // AutoResizeを有効化する
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
     }
     
     // 入力画面のキャンセルボタン
