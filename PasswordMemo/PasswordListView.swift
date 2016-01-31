@@ -103,6 +103,18 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
             }
         }
     }
+    
+    // セルが選択された場合は参照画面に遷移する
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("referenceViewSegue", sender: nil)
+    }
+    
+    // 参照画面遷移時に値を渡す
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "referenceViewSegue" {
+            
+        }
+    }
 
     // 追加ボタン
     @IBAction func tapAddButton(sender: AnyObject) {
