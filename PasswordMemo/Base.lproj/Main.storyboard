@@ -351,13 +351,20 @@
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="arN-Ai-ZML">
                                 <rect key="frame" x="20" y="110" width="560" height="30"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Lpz-nw-fYE" id="faf-rM-Br2"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ncD-m8-hYr">
                                 <rect key="frame" x="20" y="186" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Lpz-nw-fYE" id="IQr-tZ-Tel"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Account ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7g-fP-Iq9">
                                 <rect key="frame" x="20" y="80" width="150" height="30"/>
@@ -407,6 +414,12 @@
                             <constraint firstItem="ezJ-6Y-XOT" firstAttribute="leading" secondItem="UaJ-be-u6l" secondAttribute="leadingMargin" id="yMc-4W-1Oq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="accountField" destination="arN-Ai-ZML" id="kPc-md-r5A"/>
+                        <outlet property="memoTextView" destination="wpl-TS-pbe" id="drh-mV-0Za"/>
+                        <outlet property="passwordField" destination="ncD-m8-hYr" id="B9U-GN-ao3"/>
+                        <outlet property="titleField" destination="lRe-71-cHk" id="9Ch-Dp-23s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xbV-qf-SHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Qzn-sK-r5P" userLabel="Exit" sceneMemberID="exit"/>

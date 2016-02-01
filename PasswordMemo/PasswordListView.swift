@@ -106,13 +106,21 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     
     // セルが選択された場合は参照画面に遷移する
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // 選択された行数を設定
+        editRow = indexPath.row
         self.performSegueWithIdentifier("referenceViewSegue", sender: nil)
     }
     
     // 参照画面遷移時に値を渡す
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "referenceViewSegue" {
-            
+            // 選択したテーブルのデータを詳細画面に渡す
+            let editData = PasswordEntity.sharedPasswordEntity.getItems(editRow)
+            let newVC = segue.destinationViewController as! PasswordReferenceView
+            newVC.titleName = editData.titleName!
+            newVC.accountName = editData.accountID!
+            newVC.password = editData.password!
+            newVC.memo = editData.memo!
         }
     }
 
