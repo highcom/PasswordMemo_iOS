@@ -70,6 +70,80 @@
             </objects>
             <point key="canvasLocation" x="565" y="490"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Glr-KC-bpG">
+            <objects>
+                <viewController id="yN3-a4-MuW" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VCo-Mt-ZBH"/>
+                        <viewControllerLayoutGuide type="bottom" id="9s0-UE-Pe8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AD4-Ij-rpp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X0P-u3-NzX">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Master Password" id="HK1-JX-SmS">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="7ZC-Ih-13L">
+                                            <connections>
+                                                <segue destination="3ct-wC-Xz3" kind="unwind" unwindAction="returnSettingMenu:" id="SzJ-2F-cbW"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="yeU-1p-agd"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input new master password." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEp-ec-5nR">
+                                <rect key="frame" x="161" y="64" width="279" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="279" id="NgN-1b-wGy"/>
+                                    <constraint firstAttribute="height" constant="50" id="Tob-mp-0oD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hXK-4N-acY">
+                                <rect key="frame" x="206" y="122" width="188" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188" id="5eI-bT-YYl"/>
+                                    <constraint firstAttribute="height" constant="30" id="v6R-jC-jtJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jnd-e6-hGQ">
+                                <rect key="frame" x="206" y="160" width="188" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188" id="2yx-X3-ljI"/>
+                                    <constraint firstAttribute="height" constant="30" id="39m-Ja-gSu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="X0P-u3-NzX" firstAttribute="centerX" secondItem="AD4-Ij-rpp" secondAttribute="centerX" id="Hp8-yr-61U"/>
+                            <constraint firstItem="nEp-ec-5nR" firstAttribute="top" secondItem="X0P-u3-NzX" secondAttribute="bottom" id="J7y-1y-oOd"/>
+                            <constraint firstItem="hXK-4N-acY" firstAttribute="top" secondItem="nEp-ec-5nR" secondAttribute="bottom" constant="8" id="SD2-91-gGU"/>
+                            <constraint firstItem="Jnd-e6-hGQ" firstAttribute="centerX" secondItem="AD4-Ij-rpp" secondAttribute="centerX" id="ewi-zI-SdW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="X0P-u3-NzX" secondAttribute="trailing" constant="-20" id="gJi-Gp-1gM"/>
+                            <constraint firstItem="hXK-4N-acY" firstAttribute="centerX" secondItem="AD4-Ij-rpp" secondAttribute="centerX" id="m24-8T-2DK"/>
+                            <constraint firstItem="Jnd-e6-hGQ" firstAttribute="top" secondItem="hXK-4N-acY" secondAttribute="bottom" constant="8" id="ogF-lV-ibR"/>
+                            <constraint firstItem="X0P-u3-NzX" firstAttribute="top" secondItem="VCo-Mt-ZBH" secondAttribute="bottom" id="tcP-2s-RfO"/>
+                            <constraint firstItem="nEp-ec-5nR" firstAttribute="centerX" secondItem="AD4-Ij-rpp" secondAttribute="centerX" id="vGB-sy-Jd6"/>
+                            <constraint firstItem="X0P-u3-NzX" firstAttribute="leading" secondItem="AD4-Ij-rpp" secondAttribute="leadingMargin" constant="-20" id="yXh-sB-v0I"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0C1-fA-5tM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="3ct-wC-Xz3" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="565" y="1268"/>
+        </scene>
         <!--Password List View-->
         <scene sceneID="0EB-8G-0Bo">
             <objects>
@@ -151,6 +225,9 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2W-Bx-OJP">
                                 <rect key="frame" x="20" y="561" width="60" height="30"/>
                                 <state key="normal" title="Setting"/>
+                                <connections>
+                                    <segue destination="3fX-gp-wgg" kind="presentation" id="fV8-NO-jso"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbr-Fd-H96">
                                 <rect key="frame" x="550" y="561" width="30" height="30"/>
@@ -324,6 +401,52 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2015" y="490"/>
+        </scene>
+        <!--Setting Menu View-->
+        <scene sceneID="V3A-ze-1Co">
+            <objects>
+                <viewController id="3fX-gp-wgg" customClass="SettingMenuView" customModule="PasswordMemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fs6-XC-b41"/>
+                        <viewControllerLayoutGuide type="bottom" id="eBh-Mw-rkb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cfR-Ca-C72">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Oy-WL-0w2">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Setting" id="3Qs-pe-eue">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="GEw-LU-iOp">
+                                            <connections>
+                                                <segue destination="t74-ee-vCr" kind="unwind" unwindAction="returnListView:" id="hhO-jL-wYH"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM7-TI-yoJ">
+                                <rect key="frame" x="20" y="103" width="175" height="30"/>
+                                <state key="normal" title="Change Master Password"/>
+                                <connections>
+                                    <segue destination="yN3-a4-MuW" kind="presentation" id="jQ8-yp-Iod"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1Oy-WL-0w2" firstAttribute="top" secondItem="Fs6-XC-b41" secondAttribute="bottom" id="PmV-eb-cuG"/>
+                            <constraint firstItem="1Oy-WL-0w2" firstAttribute="leading" secondItem="cfR-Ca-C72" secondAttribute="leadingMargin" constant="-20" id="bdN-og-GXg"/>
+                            <constraint firstItem="1Oy-WL-0w2" firstAttribute="centerX" secondItem="cfR-Ca-C72" secondAttribute="centerX" id="gse-bx-vBu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Oy-WL-0w2" secondAttribute="trailing" constant="-20" id="unD-VL-Pln"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xuc-8D-yMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="t74-ee-vCr" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1337" y="1268"/>
         </scene>
         <!--Password Reference View-->
         <scene sceneID="iIx-ef-6Zp">

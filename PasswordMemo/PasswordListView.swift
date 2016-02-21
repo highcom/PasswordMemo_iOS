@@ -296,4 +296,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func returnListView(segue: UIStoryboardSegue) {
+        self.viewDidLoad()
+    }
 }
