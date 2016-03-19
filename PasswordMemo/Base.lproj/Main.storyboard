@@ -31,7 +31,7 @@
                                     <constraint firstAttribute="height" constant="30" id="WiS-5K-ZdH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="alphabet"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4l-O5-IFo">
                                 <rect key="frame" x="281" y="323" width="38" height="30"/>
@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="565" y="490"/>
         </scene>
-        <!--View Controller-->
+        <!--Change Master Password View-->
         <scene sceneID="Glr-KC-bpG">
             <objects>
-                <viewController id="yN3-a4-MuW" sceneMemberID="viewController">
+                <viewController id="yN3-a4-MuW" customClass="ChangeMasterPasswordView" customModule="PasswordMemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VCo-Mt-ZBH"/>
                         <viewControllerLayoutGuide type="bottom" id="9s0-UE-Pe8"/>
@@ -91,7 +91,11 @@
                                                 <segue destination="3ct-wC-Xz3" kind="unwind" unwindAction="returnSettingMenu:" id="SzJ-2F-cbW"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="yeU-1p-agd"/>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="yeU-1p-agd">
+                                            <connections>
+                                                <action selector="checkPassword:" destination="yN3-a4-MuW" id="Fnu-3b-CrL"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -123,14 +127,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SN6-T6-jjX">
+                                <rect key="frame" x="20" y="198" width="560" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="H9N-Fg-C26"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="SN6-T6-jjX" firstAttribute="top" secondItem="Jnd-e6-hGQ" secondAttribute="bottom" constant="8" id="2nD-O4-NP0"/>
+                            <constraint firstItem="SN6-T6-jjX" firstAttribute="centerX" secondItem="AD4-Ij-rpp" secondAttribute="centerX" id="HHe-bX-flC"/>
+                            <constraint firstItem="SN6-T6-jjX" firstAttribute="leading" secondItem="AD4-Ij-rpp" secondAttribute="leadingMargin" id="HRh-Xm-R67"/>
                             <constraint firstItem="X0P-u3-NzX" firstAttribute="centerX" secondItem="AD4-Ij-rpp" secondAttribute="centerX" id="Hp8-yr-61U"/>
                             <constraint firstItem="nEp-ec-5nR" firstAttribute="top" secondItem="X0P-u3-NzX" secondAttribute="bottom" id="J7y-1y-oOd"/>
                             <constraint firstItem="hXK-4N-acY" firstAttribute="top" secondItem="nEp-ec-5nR" secondAttribute="bottom" constant="8" id="SD2-91-gGU"/>
                             <constraint firstItem="Jnd-e6-hGQ" firstAttribute="centerX" secondItem="AD4-Ij-rpp" secondAttribute="centerX" id="ewi-zI-SdW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="X0P-u3-NzX" secondAttribute="trailing" constant="-20" id="gJi-Gp-1gM"/>
+                            <constraint firstItem="SN6-T6-jjX" firstAttribute="trailing" secondItem="AD4-Ij-rpp" secondAttribute="trailingMargin" id="gXR-2L-U1a"/>
                             <constraint firstItem="hXK-4N-acY" firstAttribute="centerX" secondItem="AD4-Ij-rpp" secondAttribute="centerX" id="m24-8T-2DK"/>
                             <constraint firstItem="Jnd-e6-hGQ" firstAttribute="top" secondItem="hXK-4N-acY" secondAttribute="bottom" constant="8" id="ogF-lV-ibR"/>
                             <constraint firstItem="X0P-u3-NzX" firstAttribute="top" secondItem="VCo-Mt-ZBH" secondAttribute="bottom" id="tcP-2s-RfO"/>
@@ -138,6 +155,11 @@
                             <constraint firstItem="X0P-u3-NzX" firstAttribute="leading" secondItem="AD4-Ij-rpp" secondAttribute="leadingMargin" constant="-20" id="yXh-sB-v0I"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="checkResultLabel" destination="SN6-T6-jjX" id="h9S-f2-rQC"/>
+                        <outlet property="inputPassword1" destination="hXK-4N-acY" id="2pV-x8-Gwm"/>
+                        <outlet property="inputPassword2" destination="Jnd-e6-hGQ" id="hZz-A5-hUs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0C1-fA-5tM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="3ct-wC-Xz3" userLabel="Exit" sceneMemberID="exit"/>
