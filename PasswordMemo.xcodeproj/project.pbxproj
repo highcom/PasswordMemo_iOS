@@ -13,6 +13,17 @@
 		B313FA0C1C5C4B3800F3454D /* PlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B313FA0B1C5C4B3800F3454D /* PlaceHolderTextView.swift */; };
 		B315AD471C79DCB000E91401 /* SettingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315AD461C79DCB000E91401 /* SettingMenuView.swift */; };
 		B315AD491C79DD2B00E91401 /* ChangeMasterPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315AD481C79DD2B00E91401 /* ChangeMasterPasswordView.swift */; };
+		B3165D8F1C9CF9590006BFB4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B3165D2A1C9CF9590006BFB4 /* .gitignore */; };
+		B3165D901C9CF9590006BFB4 /* .gitmodules in Resources */ = {isa = PBXBuildFile; fileRef = B3165D2B1C9CF9590006BFB4 /* .gitmodules */; };
+		B3165D911C9CF9590006BFB4 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = B3165D2C1C9CF9590006BFB4 /* .travis.yml */; };
+		B3165D921C9CF9590006BFB4 /* diagram.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3165D2D1C9CF9590006BFB4 /* diagram.jpg */; };
+		B3165D931C9CF9590006BFB4 /* EncryptedCoreData.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B3165D2E1C9CF9590006BFB4 /* EncryptedCoreData.podspec */; };
+		B3165DBE1C9CF9590006BFB4 /* EncryptedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B3165D891C9CF9590006BFB4 /* EncryptedStore.m */; };
+		B3165DBF1C9CF9590006BFB4 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B3165D8A1C9CF9590006BFB4 /* LICENSE */; };
+		B3165DC01C9CF9590006BFB4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B3165D8B1C9CF9590006BFB4 /* README.md */; };
+		B3165DC11C9CF9590006BFB4 /* stringOutput.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3165D8C1C9CF9590006BFB4 /* stringOutput.jpg */; };
+		B3165DCC1C9CFA4D0006BFB4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3165DCB1C9CFA4D0006BFB4 /* Security.framework */; };
+		B3165DD61C9CFE3E0006BFB4 /* libsqlcipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3165DD31C9CFE1F0006BFB4 /* libsqlcipher.a */; };
 		B32B77491C5DAE7400BDAD50 /* PasswordReferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32B77481C5DAE7400BDAD50 /* PasswordReferenceView.swift */; };
 		B3964C431C54724D00420B4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3964C421C54724D00420B4F /* AppDelegate.swift */; };
 		B3964C451C54724D00420B4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3964C441C54724D00420B4F /* ViewController.swift */; };
@@ -26,6 +37,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B3165DD21C9CFE1F0006BFB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3165DCD1C9CFE1E0006BFB4 /* sqlcipher.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC046055464E500DB518D;
+			remoteInfo = sqlcipher;
+		};
+		B3165DD41C9CFE370006BFB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3165DCD1C9CFE1E0006BFB4 /* sqlcipher.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC045055464E500DB518D;
+			remoteInfo = sqlcipher;
+		};
 		B3964C571C54724D00420B4F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B3964C371C54724D00420B4F /* Project object */;
@@ -49,6 +74,19 @@
 		B313FA0B1C5C4B3800F3454D /* PlaceHolderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceHolderTextView.swift; sourceTree = "<group>"; };
 		B315AD461C79DCB000E91401 /* SettingMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingMenuView.swift; sourceTree = "<group>"; };
 		B315AD481C79DD2B00E91401 /* ChangeMasterPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeMasterPasswordView.swift; sourceTree = "<group>"; };
+		B3165D281C9CF7750006BFB4 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		B3165D2A1C9CF9590006BFB4 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		B3165D2B1C9CF9590006BFB4 /* .gitmodules */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitmodules; sourceTree = "<group>"; };
+		B3165D2C1C9CF9590006BFB4 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		B3165D2D1C9CF9590006BFB4 /* diagram.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = diagram.jpg; sourceTree = "<group>"; };
+		B3165D2E1C9CF9590006BFB4 /* EncryptedCoreData.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EncryptedCoreData.podspec; sourceTree = "<group>"; };
+		B3165D881C9CF9590006BFB4 /* EncryptedStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptedStore.h; sourceTree = "<group>"; };
+		B3165D891C9CF9590006BFB4 /* EncryptedStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptedStore.m; sourceTree = "<group>"; };
+		B3165D8A1C9CF9590006BFB4 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		B3165D8B1C9CF9590006BFB4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B3165D8C1C9CF9590006BFB4 /* stringOutput.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stringOutput.jpg; sourceTree = "<group>"; };
+		B3165DCB1C9CFA4D0006BFB4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B3165DCD1C9CFE1E0006BFB4 /* sqlcipher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = sqlcipher.xcodeproj; path = "../sqlcipher-master/sqlcipher.xcodeproj"; sourceTree = "<group>"; };
 		B32B77481C5DAE7400BDAD50 /* PasswordReferenceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordReferenceView.swift; sourceTree = "<group>"; };
 		B3964C3F1C54724D00420B4F /* PasswordMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3964C421C54724D00420B4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +110,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3165DD61C9CFE3E0006BFB4 /* libsqlcipher.a in Frameworks */,
+				B3165DCC1C9CFA4D0006BFB4 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,9 +132,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B3165D291C9CF9590006BFB4 /* encrypted-core-data */ = {
+			isa = PBXGroup;
+			children = (
+				B3165D2A1C9CF9590006BFB4 /* .gitignore */,
+				B3165D2B1C9CF9590006BFB4 /* .gitmodules */,
+				B3165D2C1C9CF9590006BFB4 /* .travis.yml */,
+				B3165D2D1C9CF9590006BFB4 /* diagram.jpg */,
+				B3165D2E1C9CF9590006BFB4 /* EncryptedCoreData.podspec */,
+				B3165D871C9CF9590006BFB4 /* Incremental Store */,
+				B3165D8A1C9CF9590006BFB4 /* LICENSE */,
+				B3165D8B1C9CF9590006BFB4 /* README.md */,
+				B3165D8C1C9CF9590006BFB4 /* stringOutput.jpg */,
+				B3165D8D1C9CF9590006BFB4 /* vendor */,
+			);
+			path = "encrypted-core-data";
+			sourceTree = "<group>";
+		};
+		B3165D871C9CF9590006BFB4 /* Incremental Store */ = {
+			isa = PBXGroup;
+			children = (
+				B3165D881C9CF9590006BFB4 /* EncryptedStore.h */,
+				B3165D891C9CF9590006BFB4 /* EncryptedStore.m */,
+			);
+			path = "Incremental Store";
+			sourceTree = "<group>";
+		};
+		B3165D8D1C9CF9590006BFB4 /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				B3165D8E1C9CF9590006BFB4 /* sqlcipher */,
+			);
+			path = vendor;
+			sourceTree = "<group>";
+		};
+		B3165D8E1C9CF9590006BFB4 /* sqlcipher */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = sqlcipher;
+			sourceTree = "<group>";
+		};
+		B3165DCE1C9CFE1E0006BFB4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B3165DD31C9CFE1F0006BFB4 /* libsqlcipher.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B3964C361C54724D00420B4F = {
 			isa = PBXGroup;
 			children = (
+				B3165DCD1C9CFE1E0006BFB4 /* sqlcipher.xcodeproj */,
+				B3165DCB1C9CFA4D0006BFB4 /* Security.framework */,
+				B3165D291C9CF9590006BFB4 /* encrypted-core-data */,
+				B3165D281C9CF7750006BFB4 /* Bridging-Header.h */,
 				B3101A541C58EDE600611B99 /* PasswordEntity+CoreDataProperties.swift */,
 				B3101A551C58EDE600611B99 /* PasswordEntity.swift */,
 				B3964C411C54724D00420B4F /* PasswordMemo */,
@@ -166,6 +259,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B3165DD51C9CFE370006BFB4 /* PBXTargetDependency */,
 			);
 			name = PasswordMemo;
 			productName = PasswordMemo;
@@ -242,6 +336,12 @@
 			mainGroup = B3964C361C54724D00420B4F;
 			productRefGroup = B3964C401C54724D00420B4F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B3165DCE1C9CFE1E0006BFB4 /* Products */;
+					ProjectRef = B3165DCD1C9CFE1E0006BFB4 /* sqlcipher.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B3964C3E1C54724D00420B4F /* PasswordMemo */,
@@ -251,13 +351,30 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		B3165DD31C9CFE1F0006BFB4 /* libsqlcipher.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libsqlcipher.a;
+			remoteRef = B3165DD21C9CFE1F0006BFB4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		B3964C3D1C54724D00420B4F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3165D911C9CF9590006BFB4 /* .travis.yml in Resources */,
+				B3165DC11C9CF9590006BFB4 /* stringOutput.jpg in Resources */,
+				B3165D8F1C9CF9590006BFB4 /* .gitignore in Resources */,
 				B3964C501C54724D00420B4F /* LaunchScreen.storyboard in Resources */,
+				B3165D921C9CF9590006BFB4 /* diagram.jpg in Resources */,
+				B3165D901C9CF9590006BFB4 /* .gitmodules in Resources */,
 				B3964C4D1C54724D00420B4F /* Assets.xcassets in Resources */,
+				B3165D931C9CF9590006BFB4 /* EncryptedCoreData.podspec in Resources */,
+				B3165DBF1C9CF9590006BFB4 /* LICENSE in Resources */,
 				B3964C481C54724D00420B4F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +407,9 @@
 				B3964C431C54724D00420B4F /* AppDelegate.swift in Sources */,
 				B32B77491C5DAE7400BDAD50 /* PasswordReferenceView.swift in Sources */,
 				B3101A561C58EDE600611B99 /* PasswordEntity+CoreDataProperties.swift in Sources */,
+				B3165DC01C9CF9590006BFB4 /* README.md in Sources */,
 				B3964C4B1C54724D00420B4F /* PasswordMemo.xcdatamodeld in Sources */,
+				B3165DBE1C9CF9590006BFB4 /* EncryptedStore.m in Sources */,
 				B3964C741C5474D500420B4F /* PasswordListView.swift in Sources */,
 				B3101A571C58EDE600611B99 /* PasswordEntity.swift in Sources */,
 				B313FA0C1C5C4B3800F3454D /* PlaceHolderTextView.swift in Sources */,
@@ -316,6 +435,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B3165DD51C9CFE370006BFB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = sqlcipher;
+			targetProxy = B3165DD41C9CFE370006BFB4 /* PBXContainerItemProxy */;
+		};
 		B3964C581C54724D00420B4F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B3964C3E1C54724D00420B4F /* PasswordMemo */;
@@ -368,6 +492,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -413,6 +538,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -435,10 +561,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = PasswordMemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = (
+					"-DSQLCIPHER_CRYPTO_CC",
+					"-DSQLITE_HAS_CODEC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = highcom.PasswordMemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -446,10 +578,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = PasswordMemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = (
+					"-DSQLCIPHER_CRYPTO_CC",
+					"-DSQLITE_HAS_CODEC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = highcom.PasswordMemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
 			name = Release;
 		};
