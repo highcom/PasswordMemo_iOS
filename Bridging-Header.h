@@ -10,5 +10,6 @@
 #define Bridging_Header_h
 
 #import "EncryptedStore.h"
+#import "NSUserDefaults+MPSecureUserDefaults.h"
 
 #endif /* Bridging_Header_h */

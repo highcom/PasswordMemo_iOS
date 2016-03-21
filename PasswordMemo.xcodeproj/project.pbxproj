@@ -10,6 +10,7 @@
 		B3040A561C57A00E00B73E4E /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3040A551C57A00E00B73E4E /* PasswordInputView.swift */; };
 		B3101A561C58EDE600611B99 /* PasswordEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3101A541C58EDE600611B99 /* PasswordEntity+CoreDataProperties.swift */; };
 		B3101A571C58EDE600611B99 /* PasswordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3101A551C58EDE600611B99 /* PasswordEntity.swift */; };
+		B31193931CA021C800DC5DA3 /* NSUserDefaults+MPSecureUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = B31193921CA021C800DC5DA3 /* NSUserDefaults+MPSecureUserDefaults.m */; };
 		B313FA0C1C5C4B3800F3454D /* PlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B313FA0B1C5C4B3800F3454D /* PlaceHolderTextView.swift */; };
 		B315AD471C79DCB000E91401 /* SettingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315AD461C79DCB000E91401 /* SettingMenuView.swift */; };
 		B315AD491C79DD2B00E91401 /* ChangeMasterPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315AD481C79DD2B00E91401 /* ChangeMasterPasswordView.swift */; };
@@ -71,6 +72,8 @@
 		B3040A551C57A00E00B73E4E /* PasswordInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
 		B3101A541C58EDE600611B99 /* PasswordEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PasswordEntity+CoreDataProperties.swift"; path = "PasswordMemo/PasswordEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B3101A551C58EDE600611B99 /* PasswordEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PasswordEntity.swift; path = PasswordMemo/PasswordEntity.swift; sourceTree = "<group>"; };
+		B31193911CA021C800DC5DA3 /* NSUserDefaults+MPSecureUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+MPSecureUserDefaults.h"; sourceTree = "<group>"; };
+		B31193921CA021C800DC5DA3 /* NSUserDefaults+MPSecureUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+MPSecureUserDefaults.m"; sourceTree = "<group>"; };
 		B313FA0B1C5C4B3800F3454D /* PlaceHolderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceHolderTextView.swift; sourceTree = "<group>"; };
 		B315AD461C79DCB000E91401 /* SettingMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingMenuView.swift; sourceTree = "<group>"; };
 		B315AD481C79DD2B00E91401 /* ChangeMasterPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeMasterPasswordView.swift; sourceTree = "<group>"; };
@@ -210,6 +213,8 @@
 		B3964C411C54724D00420B4F /* PasswordMemo */ = {
 			isa = PBXGroup;
 			children = (
+				B31193911CA021C800DC5DA3 /* NSUserDefaults+MPSecureUserDefaults.h */,
+				B31193921CA021C800DC5DA3 /* NSUserDefaults+MPSecureUserDefaults.m */,
 				B3964C421C54724D00420B4F /* AppDelegate.swift */,
 				B3964C441C54724D00420B4F /* ViewController.swift */,
 				B3964C461C54724D00420B4F /* Main.storyboard */,
@@ -406,6 +411,7 @@
 				B315AD471C79DCB000E91401 /* SettingMenuView.swift in Sources */,
 				B3964C431C54724D00420B4F /* AppDelegate.swift in Sources */,
 				B32B77491C5DAE7400BDAD50 /* PasswordReferenceView.swift in Sources */,
+				B31193931CA021C800DC5DA3 /* NSUserDefaults+MPSecureUserDefaults.m in Sources */,
 				B3101A561C58EDE600611B99 /* PasswordEntity+CoreDataProperties.swift in Sources */,
 				B3165DC01C9CF9590006BFB4 /* README.md in Sources */,
 				B3964C4B1C54724D00420B4F /* PasswordMemo.xcdatamodeld in Sources */,
