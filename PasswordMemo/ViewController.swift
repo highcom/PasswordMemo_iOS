@@ -15,7 +15,8 @@ class ViewController: UIViewController {
     
     let userDefaults = NSUserDefaults.standardUserDefaults()
     var masterPassword: String?
-
+    var val: ObjCBool = ObjCBool.init(true)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,7 +24,8 @@ class ViewController: UIViewController {
         inputPassword.secureTextEntry = true
         
         // マスターパスワードが作成されているかどうかで案内文を変える
-        masterPassword = userDefaults.objectForKey("masterPw") as? String
+        masterPassword = userDefaults.secureStringForKey("masterPw", valid: &val)
+        //masterPassword = userDefaults.objectForKey("masterPw") as? String
         if masterPassword == nil {
             navigateLabel.text = "It will create a new password."
         } else {
@@ -35,7 +37,8 @@ class ViewController: UIViewController {
     @IBAction func loginButton(sender: AnyObject) {
         if masterPassword == nil {
             // マスターパスワードが作成されていない場合は新規作成
-            userDefaults.setObject(inputPassword.text, forKey: "masterPw")
+            userDefaults.setSecureObject(inputPassword.text, forKey: "masterPw")
+            //userDefaults.setObject(inputPassword.text, forKey: "masterPw")
             userDefaults.synchronize()
             self.performSegueWithIdentifier("listViewSegue", sender: nil)
         } else {

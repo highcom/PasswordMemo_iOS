@@ -16,6 +16,7 @@ class ChangeMasterPasswordView: UIViewController {
     @IBOutlet weak var checkResultLabel: UILabel!
     
     let userDefaults = NSUserDefaults.standardUserDefaults()
+    var val: ObjCBool = ObjCBool.init(true)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,8 @@ class ChangeMasterPasswordView: UIViewController {
     
     @IBAction func checkPassword(sender: AnyObject) {
         var masterPassword: String?
-        masterPassword = userDefaults.objectForKey("masterPw") as? String
+        masterPassword = userDefaults.secureStringForKey("masterPw", valid: &val)
+        //masterPassword = userDefaults.objectForKey("masterPw") as? String
         if inputPassword1.text != inputPassword2.text {
             // 入力が違っていたらエラー
             checkResultLabel.text = "Password is different!"
@@ -35,7 +37,8 @@ class ChangeMasterPasswordView: UIViewController {
             checkResultLabel.text = "It is the same as the master password"
         } else {
             // マスターパスワードが作成されていない場合は新規作成
-            userDefaults.setObject(inputPassword1.text, forKey: "masterPw")
+            userDefaults.setSecureObject(inputPassword1.text, forKey: "masterPw")
+            //userDefaults.setObject(inputPassword1.text, forKey: "masterPw")
             userDefaults.synchronize()
             // 画面を終了する
             self.dismissViewControllerAnimated(true, completion: nil)
