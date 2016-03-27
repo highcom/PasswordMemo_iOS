@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 class ViewController: UIViewController {
 
@@ -51,6 +52,64 @@ class ViewController: UIViewController {
         }
     }
 
+    // TouchIDによるログインボタン
+    @IBAction func loginTouchID(sender: AnyObject) {
+        if masterPassword == nil {
+            navigateLabel.text = "First to create a password."
+            return
+        }
+        
+        let context = LAContext()
+        var message = ""
+        var error :NSError?
+        let localizedReason = "Authentication of login."
+        
+        // TouchID認証はサブスレッドで実行される
+        if context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error){
+            
+            //TocuhIDに対応している場合
+            context.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: localizedReason, reply: {
+                success, error in
+                
+                if success {
+                    // 画面遷移はmainスレッドで実行する
+                    self.dispatch_async_main {
+                        self.performSegueWithIdentifier("listViewSegue", sender: nil)
+                    }
+                } else {
+                    switch error!.code {
+                    case LAError.AuthenticationFailed.rawValue:
+                        message = "Authentication failure."
+                    case LAError.UserCancel.rawValue:
+                        message = "Authentication has been canceled."
+                    case LAError.UserFallback.rawValue:
+                        message = "Select the path code input."
+                    case LAError.PasscodeNotSet.rawValue:
+                        message = "Passcode is not set."
+                    case LAError.SystemCancel.rawValue:
+                        message = "It has been canceled by the system."
+                    default:
+                        message = "Unknown error."
+                        return
+                    }
+
+                    self.dispatch_async_main {
+                        self.navigateLabel.text = message
+                    }
+                }
+            })
+            
+        }else{
+            //TocuhIDに対応していない場合
+            navigateLabel.text = "It does not correspond to TouchID."
+        }
+    }
+
+    // mainスレッドへのディスパッチ
+    func dispatch_async_main(block: () -> ()) {
+        dispatch_async(dispatch_get_main_queue(), block)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

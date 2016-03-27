@@ -46,15 +46,24 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsN-Yl-zho">
+                                <rect key="frame" x="270" y="361" width="61" height="30"/>
+                                <state key="normal" title="Touch ID"/>
+                                <connections>
+                                    <action selector="loginTouchID:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h8d-Ll-2s7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="K4l-O5-IFo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="11k-iD-Jhq"/>
                             <constraint firstItem="K4l-O5-IFo" firstAttribute="top" secondItem="t8j-HB-ySc" secondAttribute="bottom" constant="8" id="6SW-Q6-lIQ"/>
+                            <constraint firstItem="AsN-Yl-zho" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6iK-R0-UE0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FIV-4A-GRJ" secondAttribute="trailing" constant="-20" id="7Bk-PC-VgO"/>
                             <constraint firstItem="FIV-4A-GRJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7hm-4y-dbH"/>
                             <constraint firstItem="t8j-HB-ySc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PVa-dx-CA1"/>
                             <constraint firstItem="t8j-HB-ySc" firstAttribute="top" secondItem="MSY-bl-xQJ" secondAttribute="bottom" constant="8" id="Qbc-DL-OzA"/>
+                            <constraint firstItem="AsN-Yl-zho" firstAttribute="top" secondItem="K4l-O5-IFo" secondAttribute="bottom" constant="8" id="c4E-W0-dPP"/>
                             <constraint firstItem="MSY-bl-xQJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="de1-X1-jAt"/>
                             <constraint firstItem="FIV-4A-GRJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="iDd-l5-fLt"/>
                             <constraint firstItem="t8j-HB-ySc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kqh-1I-5X5"/>
