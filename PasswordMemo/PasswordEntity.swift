@@ -16,7 +16,12 @@ class PasswordEntity: NSManagedObject {
     // シングルトンで唯一のインスタンスを定義
     class var sharedPasswordEntity: PasswordEntity {
         struct Static {
-            static let instance = PasswordEntity()
+            static let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            static let myContext: NSManagedObjectContext = appDel.managedObjectContext
+            
+            static let myEntity: NSEntityDescription! = NSEntityDescription.entityForName("PasswordEntity", inManagedObjectContext: myContext)
+            
+            static let instance = PasswordEntity(entity: myEntity, insertIntoManagedObjectContext: nil)
         }
         return Static.instance
     }
