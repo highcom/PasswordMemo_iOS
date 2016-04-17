@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var navigateLabel: UILabel!
     @IBOutlet weak var inputPassword: UITextField!
+    @IBOutlet weak var scvBackGround: UIScrollView!
     
     let userDefaults = NSUserDefaults.standardUserDefaults()
     var masterPassword: String?
@@ -32,6 +33,50 @@ class ViewController: UIViewController {
         } else {
             navigateLabel.text = "Enter the master password."
         }
+    }
+    
+    // キーボードが表示された時の位置の設定
+    func handleKeyboardWillShowNotification(notification: NSNotification) {
+        
+        let userInfo = notification.userInfo!
+        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        let myBoundSize: CGSize = UIScreen.mainScreen().bounds.size
+        
+        let txtLimit = inputPassword.frame.origin.y + inputPassword.frame.height + 72.0
+        let kbdLimit = myBoundSize.height - keyboardScreenEndFrame.size.height
+        
+        if txtLimit >= kbdLimit {
+            scvBackGround.contentOffset.y = txtLimit - kbdLimit
+        }
+    }
+    
+    // キーボードが閉じられた時に元に戻す
+    func handleKeyboardWillHideNotification(notification: NSNotification) {
+        scvBackGround.contentOffset.y = 0
+    }
+    
+    // キーボードが表示された時
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: #selector(ViewController.handleKeyboardWillShowNotification(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(ViewController.handleKeyboardWillHideNotification(_:)), name: UIKeyboardWillHideNotification, object: nil)
+    }
+
+    // キーボードが閉じられた時
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        notificationCenter.removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+
+    //改行ボタンが押された際に呼ばれる.
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
     // ログインボタン
