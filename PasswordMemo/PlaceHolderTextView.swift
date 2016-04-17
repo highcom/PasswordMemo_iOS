@@ -25,7 +25,7 @@ public class PlaceHolderTextView: UITextView {
     override public func awakeFromNib() {
         super.awakeFromNib()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "textChanged:", name: UITextViewTextDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PlaceHolderTextView.textChanged(_:)), name: UITextViewTextDidChangeNotification, object: nil)
     }
     
     func _setText(text:NSString) {

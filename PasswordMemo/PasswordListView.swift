@@ -88,7 +88,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
             }
             
             // 削除したセル以降のdisplayOrderをつめる
-            for var i = delValue; i < PasswordEntity.sharedPasswordEntity.passwordItems.count; i++ {
+            for i in delValue ..< PasswordEntity.sharedPasswordEntity.passwordItems.count {
                 let buffItem = PasswordEntity.sharedPasswordEntity.passwordItems[i] as! PasswordEntity
                 buffItem.displayOrder = buffItem.displayOrder!.integerValue - 1
             }
@@ -176,7 +176,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
             isMoveDir = false
         }
         
-        for var i = minIndex; i <= maxIndex; i++ {
+        for var i = minIndex; i <= maxIndex; i += 1 {
             var newOrder = 0
             if i == srcIndex {
                 newOrder = desIndex
