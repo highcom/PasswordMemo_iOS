@@ -14,11 +14,13 @@ class PasswordInputView: UIViewController {
     @IBOutlet weak var accountField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var memoTextView: PlaceHolderTextView!
+    @IBOutlet weak var scvBackGround: UIScrollView!
     
     var titleName: String = ""
     var accountName: String = ""
     var password: String = ""
     var memo: String = ""
+    var textFrame: CGRect = CGRect()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,56 @@ class PasswordInputView: UIViewController {
         if memoTextView.text.characters.count == 0 {
             memoTextView.placeHolder = "input memo"
         }
+    }
+    
+    // UITextFieldが編集された場合に呼ばれる
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        textFrame = textField.frame
+        return true
+    }
+    
+    // UITextViewが編集された場合に呼ばれる
+    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+        textFrame = textView.frame
+        return true
+    }
+    
+    // キーボードが表示された時の位置の設定
+    func handleKeyboardWillShowNotification(notification: NSNotification) {
+        
+        let userInfo = notification.userInfo!
+        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        let myBoundSize: CGSize = UIScreen.mainScreen().bounds.size
+        
+        let txtLimit = textFrame.origin.y + textFrame.height + 72.0
+        let kbdLimit = myBoundSize.height - keyboardScreenEndFrame.size.height
+        
+        if txtLimit >= kbdLimit {
+            scvBackGround.contentOffset.y = txtLimit - kbdLimit
+        }
+    }
+    
+    // キーボードが閉じられた時に元に戻す
+    func handleKeyboardWillHideNotification(notification: NSNotification) {
+        scvBackGround.contentOffset.y = 0
+    }
+    
+    // キーボードが表示された時
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: #selector(ViewController.handleKeyboardWillShowNotification(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(ViewController.handleKeyboardWillHideNotification(_:)), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    // キーボードが閉じられた時
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        notificationCenter.removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
     
     // タイトル入力でReturn
