@@ -51,4 +51,20 @@ class PasswordReferenceView: UIViewController {
         presentViewController(alertController, animated: true, completion: nil)
         return false
     }
+    
+    // 編集ボタンがタップされた場合
+    @IBAction func editPasswordMemoData(sender: AnyObject) {
+        self.performSegueWithIdentifier("editInputViewSegue", sender: nil)
+    }
+    
+    // 参照画面遷移時に値を渡す
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "editInputViewSegue" {
+            let newVC = segue.destinationViewController as! PasswordInputView
+            newVC.titleName = titleField.title!
+            newVC.accountName = accountField.text!
+            newVC.password = passwordField.text!
+            newVC.memo = memoTextView.text!
+        }
+    }
 }

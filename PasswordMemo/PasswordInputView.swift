@@ -10,6 +10,7 @@ import UIKit
 
 class PasswordInputView: UIViewController {
 
+    @IBOutlet weak var operationName: UINavigationItem!
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var accountField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -29,6 +30,9 @@ class PasswordInputView: UIViewController {
         memoTextView.layer.borderColor = UIColor.lightGrayColor().CGColor
         memoTextView.layer.cornerRadius = 5
         
+        if titleName != "" {
+            operationName.title = "Edit Data"
+        }
         // 編集の場合は前の画面から値が渡されている
         titleField.text = titleName
         accountField.text = accountName

@@ -108,6 +108,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // 選択された行数を設定
         editRow = indexPath.row
+        state = STATE.ST_EDIT
         self.performSegueWithIdentifier("referenceViewSegue", sender: nil)
     }
     
