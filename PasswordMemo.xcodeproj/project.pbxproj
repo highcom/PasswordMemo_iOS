@@ -8,21 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		B3040A561C57A00E00B73E4E /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3040A551C57A00E00B73E4E /* PasswordInputView.swift */; };
+		B30B2D7E1CCC57850019B44E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B30B2D191CCC57850019B44E /* .gitignore */; };
+		B30B2D7F1CCC57850019B44E /* .gitmodules in Resources */ = {isa = PBXBuildFile; fileRef = B30B2D1A1CCC57850019B44E /* .gitmodules */; };
+		B30B2D801CCC57850019B44E /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = B30B2D1B1CCC57850019B44E /* .travis.yml */; };
+		B30B2D811CCC57850019B44E /* diagram.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B30B2D1C1CCC57850019B44E /* diagram.jpg */; };
+		B30B2D821CCC57850019B44E /* EncryptedCoreData.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B30B2D1D1CCC57850019B44E /* EncryptedCoreData.podspec */; };
+		B30B2DAD1CCC57850019B44E /* EncryptedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B30B2D781CCC57850019B44E /* EncryptedStore.m */; };
+		B30B2DAE1CCC57850019B44E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B30B2D791CCC57850019B44E /* LICENSE */; };
+		B30B2DAF1CCC57850019B44E /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B30B2D7A1CCC57850019B44E /* README.md */; };
+		B30B2DB01CCC57850019B44E /* stringOutput.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B30B2D7B1CCC57850019B44E /* stringOutput.jpg */; };
 		B3101A561C58EDE600611B99 /* PasswordEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3101A541C58EDE600611B99 /* PasswordEntity+CoreDataProperties.swift */; };
 		B3101A571C58EDE600611B99 /* PasswordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3101A551C58EDE600611B99 /* PasswordEntity.swift */; };
 		B31193931CA021C800DC5DA3 /* NSUserDefaults+MPSecureUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = B31193921CA021C800DC5DA3 /* NSUserDefaults+MPSecureUserDefaults.m */; };
 		B313FA0C1C5C4B3800F3454D /* PlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B313FA0B1C5C4B3800F3454D /* PlaceHolderTextView.swift */; };
 		B315AD471C79DCB000E91401 /* SettingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315AD461C79DCB000E91401 /* SettingMenuView.swift */; };
 		B315AD491C79DD2B00E91401 /* ChangeMasterPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315AD481C79DD2B00E91401 /* ChangeMasterPasswordView.swift */; };
-		B3165D8F1C9CF9590006BFB4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B3165D2A1C9CF9590006BFB4 /* .gitignore */; };
-		B3165D901C9CF9590006BFB4 /* .gitmodules in Resources */ = {isa = PBXBuildFile; fileRef = B3165D2B1C9CF9590006BFB4 /* .gitmodules */; };
-		B3165D911C9CF9590006BFB4 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = B3165D2C1C9CF9590006BFB4 /* .travis.yml */; };
-		B3165D921C9CF9590006BFB4 /* diagram.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3165D2D1C9CF9590006BFB4 /* diagram.jpg */; };
-		B3165D931C9CF9590006BFB4 /* EncryptedCoreData.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B3165D2E1C9CF9590006BFB4 /* EncryptedCoreData.podspec */; };
-		B3165DBE1C9CF9590006BFB4 /* EncryptedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B3165D891C9CF9590006BFB4 /* EncryptedStore.m */; };
-		B3165DBF1C9CF9590006BFB4 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B3165D8A1C9CF9590006BFB4 /* LICENSE */; };
-		B3165DC01C9CF9590006BFB4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B3165D8B1C9CF9590006BFB4 /* README.md */; };
-		B3165DC11C9CF9590006BFB4 /* stringOutput.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3165D8C1C9CF9590006BFB4 /* stringOutput.jpg */; };
 		B3165DCC1C9CFA4D0006BFB4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3165DCB1C9CFA4D0006BFB4 /* Security.framework */; };
 		B3165DD61C9CFE3E0006BFB4 /* libsqlcipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3165DD31C9CFE1F0006BFB4 /* libsqlcipher.a */; };
 		B32B77491C5DAE7400BDAD50 /* PasswordReferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32B77481C5DAE7400BDAD50 /* PasswordReferenceView.swift */; };
@@ -70,6 +70,16 @@
 
 /* Begin PBXFileReference section */
 		B3040A551C57A00E00B73E4E /* PasswordInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
+		B30B2D191CCC57850019B44E /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		B30B2D1A1CCC57850019B44E /* .gitmodules */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitmodules; sourceTree = "<group>"; };
+		B30B2D1B1CCC57850019B44E /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		B30B2D1C1CCC57850019B44E /* diagram.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = diagram.jpg; sourceTree = "<group>"; };
+		B30B2D1D1CCC57850019B44E /* EncryptedCoreData.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EncryptedCoreData.podspec; sourceTree = "<group>"; };
+		B30B2D771CCC57850019B44E /* EncryptedStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptedStore.h; sourceTree = "<group>"; };
+		B30B2D781CCC57850019B44E /* EncryptedStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptedStore.m; sourceTree = "<group>"; };
+		B30B2D791CCC57850019B44E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		B30B2D7A1CCC57850019B44E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B30B2D7B1CCC57850019B44E /* stringOutput.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stringOutput.jpg; sourceTree = "<group>"; };
 		B3101A541C58EDE600611B99 /* PasswordEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PasswordEntity+CoreDataProperties.swift"; path = "PasswordMemo/PasswordEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B3101A551C58EDE600611B99 /* PasswordEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PasswordEntity.swift; path = PasswordMemo/PasswordEntity.swift; sourceTree = "<group>"; };
 		B31193911CA021C800DC5DA3 /* NSUserDefaults+MPSecureUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+MPSecureUserDefaults.h"; sourceTree = "<group>"; };
@@ -78,16 +88,6 @@
 		B315AD461C79DCB000E91401 /* SettingMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingMenuView.swift; sourceTree = "<group>"; };
 		B315AD481C79DD2B00E91401 /* ChangeMasterPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeMasterPasswordView.swift; sourceTree = "<group>"; };
 		B3165D281C9CF7750006BFB4 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		B3165D2A1C9CF9590006BFB4 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		B3165D2B1C9CF9590006BFB4 /* .gitmodules */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitmodules; sourceTree = "<group>"; };
-		B3165D2C1C9CF9590006BFB4 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
-		B3165D2D1C9CF9590006BFB4 /* diagram.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = diagram.jpg; sourceTree = "<group>"; };
-		B3165D2E1C9CF9590006BFB4 /* EncryptedCoreData.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EncryptedCoreData.podspec; sourceTree = "<group>"; };
-		B3165D881C9CF9590006BFB4 /* EncryptedStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptedStore.h; sourceTree = "<group>"; };
-		B3165D891C9CF9590006BFB4 /* EncryptedStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptedStore.m; sourceTree = "<group>"; };
-		B3165D8A1C9CF9590006BFB4 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		B3165D8B1C9CF9590006BFB4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		B3165D8C1C9CF9590006BFB4 /* stringOutput.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stringOutput.jpg; sourceTree = "<group>"; };
 		B3165DCB1C9CFA4D0006BFB4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B3165DCD1C9CFE1E0006BFB4 /* sqlcipher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = sqlcipher.xcodeproj; path = "../sqlcipher-master/sqlcipher.xcodeproj"; sourceTree = "<group>"; };
 		B32B77481C5DAE7400BDAD50 /* PasswordReferenceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordReferenceView.swift; sourceTree = "<group>"; };
@@ -135,41 +135,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B3165D291C9CF9590006BFB4 /* encrypted-core-data */ = {
+		B30B2D181CCC57850019B44E /* encrypted-core-data */ = {
 			isa = PBXGroup;
 			children = (
-				B3165D2A1C9CF9590006BFB4 /* .gitignore */,
-				B3165D2B1C9CF9590006BFB4 /* .gitmodules */,
-				B3165D2C1C9CF9590006BFB4 /* .travis.yml */,
-				B3165D2D1C9CF9590006BFB4 /* diagram.jpg */,
-				B3165D2E1C9CF9590006BFB4 /* EncryptedCoreData.podspec */,
-				B3165D871C9CF9590006BFB4 /* Incremental Store */,
-				B3165D8A1C9CF9590006BFB4 /* LICENSE */,
-				B3165D8B1C9CF9590006BFB4 /* README.md */,
-				B3165D8C1C9CF9590006BFB4 /* stringOutput.jpg */,
-				B3165D8D1C9CF9590006BFB4 /* vendor */,
+				B30B2D191CCC57850019B44E /* .gitignore */,
+				B30B2D1A1CCC57850019B44E /* .gitmodules */,
+				B30B2D1B1CCC57850019B44E /* .travis.yml */,
+				B30B2D1C1CCC57850019B44E /* diagram.jpg */,
+				B30B2D1D1CCC57850019B44E /* EncryptedCoreData.podspec */,
+				B30B2D761CCC57850019B44E /* Incremental Store */,
+				B30B2D791CCC57850019B44E /* LICENSE */,
+				B30B2D7A1CCC57850019B44E /* README.md */,
+				B30B2D7B1CCC57850019B44E /* stringOutput.jpg */,
+				B30B2D7C1CCC57850019B44E /* vendor */,
 			);
 			path = "encrypted-core-data";
 			sourceTree = "<group>";
 		};
-		B3165D871C9CF9590006BFB4 /* Incremental Store */ = {
+		B30B2D761CCC57850019B44E /* Incremental Store */ = {
 			isa = PBXGroup;
 			children = (
-				B3165D881C9CF9590006BFB4 /* EncryptedStore.h */,
-				B3165D891C9CF9590006BFB4 /* EncryptedStore.m */,
+				B30B2D771CCC57850019B44E /* EncryptedStore.h */,
+				B30B2D781CCC57850019B44E /* EncryptedStore.m */,
 			);
 			path = "Incremental Store";
 			sourceTree = "<group>";
 		};
-		B3165D8D1C9CF9590006BFB4 /* vendor */ = {
+		B30B2D7C1CCC57850019B44E /* vendor */ = {
 			isa = PBXGroup;
 			children = (
-				B3165D8E1C9CF9590006BFB4 /* sqlcipher */,
+				B30B2D7D1CCC57850019B44E /* sqlcipher */,
 			);
 			path = vendor;
 			sourceTree = "<group>";
 		};
-		B3165D8E1C9CF9590006BFB4 /* sqlcipher */ = {
+		B30B2D7D1CCC57850019B44E /* sqlcipher */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -187,9 +187,9 @@
 		B3964C361C54724D00420B4F = {
 			isa = PBXGroup;
 			children = (
+				B30B2D181CCC57850019B44E /* encrypted-core-data */,
 				B3165DCD1C9CFE1E0006BFB4 /* sqlcipher.xcodeproj */,
 				B3165DCB1C9CFA4D0006BFB4 /* Security.framework */,
-				B3165D291C9CF9590006BFB4 /* encrypted-core-data */,
 				B3165D281C9CF7750006BFB4 /* Bridging-Header.h */,
 				B3101A541C58EDE600611B99 /* PasswordEntity+CoreDataProperties.swift */,
 				B3101A551C58EDE600611B99 /* PasswordEntity.swift */,
@@ -371,15 +371,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3165D911C9CF9590006BFB4 /* .travis.yml in Resources */,
-				B3165DC11C9CF9590006BFB4 /* stringOutput.jpg in Resources */,
-				B3165D8F1C9CF9590006BFB4 /* .gitignore in Resources */,
+				B30B2D801CCC57850019B44E /* .travis.yml in Resources */,
+				B30B2DB01CCC57850019B44E /* stringOutput.jpg in Resources */,
+				B30B2D7E1CCC57850019B44E /* .gitignore in Resources */,
 				B3964C501C54724D00420B4F /* LaunchScreen.storyboard in Resources */,
-				B3165D921C9CF9590006BFB4 /* diagram.jpg in Resources */,
-				B3165D901C9CF9590006BFB4 /* .gitmodules in Resources */,
+				B30B2D811CCC57850019B44E /* diagram.jpg in Resources */,
+				B30B2D7F1CCC57850019B44E /* .gitmodules in Resources */,
 				B3964C4D1C54724D00420B4F /* Assets.xcassets in Resources */,
-				B3165D931C9CF9590006BFB4 /* EncryptedCoreData.podspec in Resources */,
-				B3165DBF1C9CF9590006BFB4 /* LICENSE in Resources */,
+				B30B2D821CCC57850019B44E /* EncryptedCoreData.podspec in Resources */,
+				B30B2DAE1CCC57850019B44E /* LICENSE in Resources */,
 				B3964C481C54724D00420B4F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,10 +412,10 @@
 				B3964C431C54724D00420B4F /* AppDelegate.swift in Sources */,
 				B32B77491C5DAE7400BDAD50 /* PasswordReferenceView.swift in Sources */,
 				B31193931CA021C800DC5DA3 /* NSUserDefaults+MPSecureUserDefaults.m in Sources */,
+				B30B2DAF1CCC57850019B44E /* README.md in Sources */,
 				B3101A561C58EDE600611B99 /* PasswordEntity+CoreDataProperties.swift in Sources */,
-				B3165DC01C9CF9590006BFB4 /* README.md in Sources */,
 				B3964C4B1C54724D00420B4F /* PasswordMemo.xcdatamodeld in Sources */,
-				B3165DBE1C9CF9590006BFB4 /* EncryptedStore.m in Sources */,
+				B30B2DAD1CCC57850019B44E /* EncryptedStore.m in Sources */,
 				B3964C741C5474D500420B4F /* PasswordListView.swift in Sources */,
 				B3101A571C58EDE600611B99 /* PasswordEntity.swift in Sources */,
 				B313FA0C1C5C4B3800F3454D /* PlaceHolderTextView.swift in Sources */,
