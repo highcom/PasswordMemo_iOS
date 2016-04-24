@@ -82,6 +82,10 @@ class ViewController: UIViewController {
     // ログインボタン
     @IBAction func loginButton(sender: AnyObject) {
         if masterPassword == nil {
+            if inputPassword.text == "" {
+                navigateLabel.text = "Password is empty!"
+                return
+            }
             // マスターパスワードが作成されていない場合は新規作成
             userDefaults.setSecureObject(inputPassword.text, forKey: "masterPw")
             //userDefaults.setObject(inputPassword.text, forKey: "masterPw")
@@ -154,7 +158,17 @@ class ViewController: UIViewController {
     func dispatch_async_main(block: () -> ()) {
         dispatch_async(dispatch_get_main_queue(), block)
     }
-    
+
+    // マスターパスワード入力でReturn
+    @IBAction func inputMasterPasswordReturn(sender: UITextField) {
+        self.view.endEditing(true)
+    }
+
+    // 画面がタップされたらキーボードをしまう
+    @IBAction func tapScreen(sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

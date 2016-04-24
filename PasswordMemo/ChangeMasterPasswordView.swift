@@ -34,7 +34,7 @@ class ChangeMasterPasswordView: UIViewController {
             checkResultLabel.text = "Password is different!"
         } else if masterPassword == inputPassword1.text {
             // マスターパスワードと同じだったらエラー
-            checkResultLabel.text = "It is the same as the master password"
+            checkResultLabel.text = "It is the same as the master password."
         } else {
             // マスターパスワードが作成されていない場合は新規作成
             userDefaults.setSecureObject(inputPassword1.text, forKey: "masterPw")
@@ -43,5 +43,20 @@ class ChangeMasterPasswordView: UIViewController {
             // 画面を終了する
             self.dismissViewControllerAnimated(true, completion: nil)
         }
+    }
+    
+    // パスワード入力１でReturn
+    @IBAction func inputPassword1Return(sender: UITextField) {
+        self.inputPassword2.becomeFirstResponder()
+    }
+
+    // パスワード入力２でReturn
+    @IBAction func inputPassword2Return(sender: UITextField) {
+        self.view.endEditing(true)
+    }
+    
+    // 画面がタップされたらキーボードをしまう
+    @IBAction func tapScreen(sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
     }
 }

@@ -37,6 +37,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="alphabet"/>
                                         <connections>
+                                            <action selector="inputMasterPasswordReturn:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="E3N-5N-FcU"/>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="37B-Kz-HmA"/>
                                         </connections>
                                     </textField>
@@ -86,6 +87,9 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ecD-2Z-eId" secondAttribute="bottom" id="qyc-wb-ph3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ecD-2Z-eId" secondAttribute="trailing" constant="-20" id="v4w-o0-PZa"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Bjw-bs-1na" appends="YES" id="py0-I8-iRF"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="inputPassword" destination="t8j-HB-ySc" id="0BW-Q8-yDO"/>
@@ -95,6 +99,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Bjw-bs-1na">
+                    <connections>
+                        <action selector="tapScreen:" destination="BYZ-38-t0r" id="Auy-zv-4WS"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="565" y="490"/>
         </scene>
@@ -145,6 +154,10 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="inputPassword1Return:" destination="yN3-a4-MuW" eventType="editingDidEndOnExit" id="4WT-4r-zOn"/>
+                                    <outlet property="delegate" destination="yN3-a4-MuW" id="Kj0-YM-jB0"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jnd-e6-hGQ">
                                 <rect key="frame" x="206" y="160" width="188" height="30"/>
@@ -154,6 +167,10 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="inputPassword2Return:" destination="yN3-a4-MuW" eventType="editingDidEndOnExit" id="O4d-kT-dk5"/>
+                                    <outlet property="delegate" destination="yN3-a4-MuW" id="Zqa-HD-4Np"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SN6-T6-jjX">
                                 <rect key="frame" x="20" y="198" width="560" height="50"/>
@@ -182,6 +199,9 @@
                             <constraint firstItem="nEp-ec-5nR" firstAttribute="centerX" secondItem="AD4-Ij-rpp" secondAttribute="centerX" id="vGB-sy-Jd6"/>
                             <constraint firstItem="X0P-u3-NzX" firstAttribute="leading" secondItem="AD4-Ij-rpp" secondAttribute="leadingMargin" constant="-20" id="yXh-sB-v0I"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Lyh-1z-jNl" appends="YES" id="6ap-rw-XFR"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="checkResultLabel" destination="SN6-T6-jjX" id="h9S-f2-rQC"/>
@@ -190,6 +210,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0C1-fA-5tM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Lyh-1z-jNl">
+                    <connections>
+                        <action selector="tapScreen:" destination="yN3-a4-MuW" id="gWv-5U-q9C"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <exit id="3ct-wC-Xz3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="565" y="1268"/>
@@ -512,6 +537,14 @@
                                 <connections>
                                     <segue destination="yN3-a4-MuW" kind="presentation" id="jQ8-yp-Iod"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGV-7X-PEy">
+                                <rect key="frame" x="20" y="141" width="94" height="30"/>
+                                <state key="normal" title="Change Color"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eH0-Dh-zPL">
+                                <rect key="frame" x="20" y="179" width="277" height="30"/>
+                                <state key="normal" title="Data deletion by password input mistake"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
