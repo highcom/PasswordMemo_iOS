@@ -523,7 +523,7 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Setting" id="3Qs-pe-eue">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="GEw-LU-iOp">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="GEw-LU-iOp">
                                             <connections>
                                                 <segue destination="t74-ee-vCr" kind="unwind" unwindAction="returnListView:" id="hhO-jL-wYH"/>
                                             </connections>
@@ -531,27 +531,41 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM7-TI-yoJ">
-                                <rect key="frame" x="20" y="103" width="175" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM7-TI-yoJ">
+                                <rect key="frame" x="213" y="100" width="175" height="30"/>
                                 <state key="normal" title="Change Master Password"/>
                                 <connections>
                                     <segue destination="yN3-a4-MuW" kind="presentation" id="jQ8-yp-Iod"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGV-7X-PEy">
-                                <rect key="frame" x="20" y="141" width="94" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGV-7X-PEy">
+                                <rect key="frame" x="253" y="170" width="94" height="30"/>
                                 <state key="normal" title="Change Color"/>
+                                <connections>
+                                    <segue destination="tsp-dn-3je" kind="presentation" id="K9s-Nq-wRf"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eH0-Dh-zPL">
-                                <rect key="frame" x="20" y="179" width="277" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eH0-Dh-zPL">
+                                <rect key="frame" x="162" y="240" width="277" height="30"/>
                                 <state key="normal" title="Data deletion by password input mistake"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright (c) 2016 Koichi Inoue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3e-GO-Chj">
+                                <rect key="frame" x="180" y="559" width="240" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="QM7-TI-yoJ" firstAttribute="centerX" secondItem="cfR-Ca-C72" secondAttribute="centerX" id="3i3-A1-2tc"/>
+                            <constraint firstItem="eH0-Dh-zPL" firstAttribute="centerX" secondItem="cfR-Ca-C72" secondAttribute="centerX" id="Hmg-dQ-6Gl"/>
                             <constraint firstItem="1Oy-WL-0w2" firstAttribute="top" secondItem="Fs6-XC-b41" secondAttribute="bottom" id="PmV-eb-cuG"/>
+                            <constraint firstItem="g3e-GO-Chj" firstAttribute="centerX" secondItem="cfR-Ca-C72" secondAttribute="centerX" id="SfC-jM-uZV"/>
+                            <constraint firstItem="eBh-Mw-rkb" firstAttribute="top" secondItem="g3e-GO-Chj" secondAttribute="bottom" constant="20" id="ZnV-Xl-e7x"/>
                             <constraint firstItem="1Oy-WL-0w2" firstAttribute="leading" secondItem="cfR-Ca-C72" secondAttribute="leadingMargin" constant="-20" id="bdN-og-GXg"/>
                             <constraint firstItem="1Oy-WL-0w2" firstAttribute="centerX" secondItem="cfR-Ca-C72" secondAttribute="centerX" id="gse-bx-vBu"/>
+                            <constraint firstItem="dGV-7X-PEy" firstAttribute="centerX" secondItem="cfR-Ca-C72" secondAttribute="centerX" id="tCB-oh-a52"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Oy-WL-0w2" secondAttribute="trailing" constant="-20" id="unD-VL-Pln"/>
                         </constraints>
                     </view>
@@ -560,6 +574,56 @@
                 <exit id="t74-ee-vCr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1337" y="1268"/>
+        </scene>
+        <!--Select Color View-->
+        <scene sceneID="e63-7W-6mL">
+            <objects>
+                <viewController id="tsp-dn-3je" customClass="SelectColorView" customModule="PasswordMemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2z2-XU-06I"/>
+                        <viewControllerLayoutGuide type="bottom" id="6vb-U5-v4E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GDa-2E-Nrx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DMS-8Z-wEV">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Select Color" id="VBa-SR-zBf">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="gj4-sY-ufG">
+                                            <connections>
+                                                <segue destination="FCh-Il-a35" kind="unwind" unwindAction="returnSettingMenu:" id="tO2-xT-R0E"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A9t-Tr-fV2">
+                                <rect key="frame" x="0.0" y="192" width="600" height="216"/>
+                                <connections>
+                                    <outlet property="delegate" destination="tsp-dn-3je" id="8v1-Qw-Da8"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="DMS-8Z-wEV" secondAttribute="trailing" constant="-20" id="IQp-nK-Mhe"/>
+                            <constraint firstItem="A9t-Tr-fV2" firstAttribute="centerX" secondItem="GDa-2E-Nrx" secondAttribute="centerX" id="SSx-eQ-y9Y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="A9t-Tr-fV2" secondAttribute="trailing" constant="-20" id="cae-ox-AvJ"/>
+                            <constraint firstItem="A9t-Tr-fV2" firstAttribute="leading" secondItem="GDa-2E-Nrx" secondAttribute="leadingMargin" constant="-20" id="k7P-VS-I8c"/>
+                            <constraint firstItem="DMS-8Z-wEV" firstAttribute="leading" secondItem="GDa-2E-Nrx" secondAttribute="leadingMargin" constant="-20" id="moY-pc-ZZ6"/>
+                            <constraint firstItem="A9t-Tr-fV2" firstAttribute="centerY" secondItem="GDa-2E-Nrx" secondAttribute="centerY" id="zFa-T4-mbc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="colorPicker" destination="A9t-Tr-fV2" id="S8m-y3-LYw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lKL-pf-2hb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="FCh-Il-a35" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="565" y="2045"/>
         </scene>
         <!--Password Reference View-->
         <scene sceneID="iIx-ef-6Zp">

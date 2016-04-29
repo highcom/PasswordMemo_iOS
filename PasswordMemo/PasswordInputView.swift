@@ -25,6 +25,7 @@ class PasswordInputView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = ColorData.getSelectColor()
         // Do any additional setup after loading the view.
         memoTextView.layer.borderWidth = 0.5
         memoTextView.layer.borderColor = UIColor.lightGrayColor().CGColor

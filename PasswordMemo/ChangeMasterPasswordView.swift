@@ -20,6 +20,7 @@ class ChangeMasterPasswordView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = ColorData.getSelectColor()
         
         inputPassword1.secureTextEntry = true
         inputPassword2.secureTextEntry = true

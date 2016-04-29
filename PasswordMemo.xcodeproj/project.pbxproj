@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B302ABBD1CD2F66100F1D792 /* SelectColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B302ABBC1CD2F66100F1D792 /* SelectColorView.swift */; };
 		B3040A561C57A00E00B73E4E /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3040A551C57A00E00B73E4E /* PasswordInputView.swift */; };
 		B30B2D7E1CCC57850019B44E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B30B2D191CCC57850019B44E /* .gitignore */; };
 		B30B2D7F1CCC57850019B44E /* .gitmodules in Resources */ = {isa = PBXBuildFile; fileRef = B30B2D1A1CCC57850019B44E /* .gitmodules */; };
@@ -69,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B302ABBC1CD2F66100F1D792 /* SelectColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectColorView.swift; sourceTree = "<group>"; };
 		B3040A551C57A00E00B73E4E /* PasswordInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
 		B30B2D191CCC57850019B44E /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		B30B2D1A1CCC57850019B44E /* .gitmodules */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitmodules; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				B32B77481C5DAE7400BDAD50 /* PasswordReferenceView.swift */,
 				B315AD461C79DCB000E91401 /* SettingMenuView.swift */,
 				B315AD481C79DD2B00E91401 /* ChangeMasterPasswordView.swift */,
+				B302ABBC1CD2F66100F1D792 /* SelectColorView.swift */,
 			);
 			path = PasswordMemo;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				B32B77491C5DAE7400BDAD50 /* PasswordReferenceView.swift in Sources */,
 				B31193931CA021C800DC5DA3 /* NSUserDefaults+MPSecureUserDefaults.m in Sources */,
 				B30B2DAF1CCC57850019B44E /* README.md in Sources */,
+				B302ABBD1CD2F66100F1D792 /* SelectColorView.swift in Sources */,
 				B3101A561C58EDE600611B99 /* PasswordEntity+CoreDataProperties.swift in Sources */,
 				B3964C4B1C54724D00420B4F /* PasswordMemo.xcdatamodeld in Sources */,
 				B30B2DAD1CCC57850019B44E /* EncryptedStore.m in Sources */,

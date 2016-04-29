@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = ColorData.getSelectColor()
         // Do any additional setup after loading the view, typically from a nib.
         inputPassword.text = ""
         inputPassword.secureTextEntry = true

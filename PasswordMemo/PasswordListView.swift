@@ -24,6 +24,8 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = ColorData.getSelectColor()
+        passwordListView.backgroundColor = UIColor.clearColor()
         // Do any additional setup after loading the view, typically from a nib.
         
         PasswordEntity.sharedPasswordEntity.tableSearchText = ""
@@ -51,6 +53,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     // テーブルの表示内容
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = passwordListView.dequeueReusableCellWithIdentifier("PasswordCell")! as UITableViewCell
+        cell.backgroundColor = UIColor.clearColor()
         let pwItem = PasswordEntity.sharedPasswordEntity.getItems(indexPath.row)
         
         // タイトルタグを取得
