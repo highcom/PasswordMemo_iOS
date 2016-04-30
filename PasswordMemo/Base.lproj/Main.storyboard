@@ -42,7 +42,8 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4l-O5-IFo">
-                                        <rect key="frame" x="281" y="291" width="38" height="30"/>
+                                        <rect key="frame" x="278" y="291" width="45" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rpn-zr-Whb"/>
@@ -55,7 +56,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsN-Yl-zho">
-                                        <rect key="frame" x="270" y="329" width="61" height="30"/>
+                                        <rect key="frame" x="260" y="350" width="80" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Touch ID"/>
                                         <connections>
                                             <action selector="loginTouchID:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h8d-Ll-2s7"/>
@@ -63,12 +65,12 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="t8j-HB-ySc" firstAttribute="centerY" secondItem="ecD-2Z-eId" secondAttribute="centerY" id="1gq-CA-oBS"/>
-                                    <constraint firstItem="AsN-Yl-zho" firstAttribute="top" secondItem="K4l-O5-IFo" secondAttribute="bottom" constant="8" id="AqW-do-M4M"/>
+                                    <constraint firstItem="t8j-HB-ySc" firstAttribute="centerY" secondItem="ecD-2Z-eId" secondAttribute="centerY" id="HdQ-Sz-vEY"/>
+                                    <constraint firstItem="K4l-O5-IFo" firstAttribute="top" secondItem="t8j-HB-ySc" secondAttribute="bottom" constant="8" id="MXS-4G-6fl"/>
                                     <constraint firstItem="MSY-bl-xQJ" firstAttribute="centerX" secondItem="ecD-2Z-eId" secondAttribute="centerX" id="S6u-dA-9lg"/>
                                     <constraint firstItem="K4l-O5-IFo" firstAttribute="centerX" secondItem="ecD-2Z-eId" secondAttribute="centerX" id="U0f-IW-sg8"/>
-                                    <constraint firstItem="K4l-O5-IFo" firstAttribute="top" secondItem="t8j-HB-ySc" secondAttribute="bottom" constant="8" id="ZQx-fa-hbQ"/>
                                     <constraint firstItem="AsN-Yl-zho" firstAttribute="centerX" secondItem="ecD-2Z-eId" secondAttribute="centerX" id="cQG-Js-YQs"/>
+                                    <constraint firstItem="AsN-Yl-zho" firstAttribute="top" secondItem="K4l-O5-IFo" secondAttribute="bottom" constant="25" id="kVj-Qp-dTo"/>
                                     <constraint firstItem="t8j-HB-ySc" firstAttribute="centerX" secondItem="ecD-2Z-eId" secondAttribute="centerX" id="lL5-dH-mAc"/>
                                     <constraint firstItem="t8j-HB-ySc" firstAttribute="top" secondItem="MSY-bl-xQJ" secondAttribute="bottom" constant="8" id="n9V-ew-5vg"/>
                                 </constraints>
@@ -95,6 +97,7 @@
                         <outlet property="inputPassword" destination="t8j-HB-ySc" id="0BW-Q8-yDO"/>
                         <outlet property="navigateLabel" destination="MSY-bl-xQJ" id="sZ8-9p-g8e"/>
                         <outlet property="scvBackGround" destination="ecD-2Z-eId" id="Jw9-zT-a81"/>
+                        <outlet property="touchIDButton" destination="AsN-Yl-zho" id="m3Q-ap-I9u"/>
                         <segue destination="NDh-ze-oct" kind="presentation" identifier="listViewSegue" id="mEx-MI-HVZ"/>
                     </connections>
                 </viewController>
@@ -531,23 +534,19 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM7-TI-yoJ">
-                                <rect key="frame" x="213" y="100" width="175" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM7-TI-yoJ">
+                                <rect key="frame" x="20" y="100" width="175" height="30"/>
                                 <state key="normal" title="Change Master Password"/>
                                 <connections>
                                     <segue destination="yN3-a4-MuW" kind="presentation" id="jQ8-yp-Iod"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGV-7X-PEy">
-                                <rect key="frame" x="253" y="170" width="94" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGV-7X-PEy">
+                                <rect key="frame" x="20" y="170" width="94" height="30"/>
                                 <state key="normal" title="Change Color"/>
                                 <connections>
                                     <segue destination="tsp-dn-3je" kind="presentation" id="K9s-Nq-wRf"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eH0-Dh-zPL">
-                                <rect key="frame" x="162" y="240" width="277" height="30"/>
-                                <state key="normal" title="Data deletion by password input mistake"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright (c) 2016 Koichi Inoue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3e-GO-Chj">
                                 <rect key="frame" x="180" y="559" width="240" height="21"/>
@@ -555,20 +554,74 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7wB-3J-tOm">
+                                <rect key="frame" x="531" y="235" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Delete if you enter an incorrect password 5 times." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Reg-MA-5UL">
+                                <rect key="frame" x="20" y="269" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Enable login in touch ID." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cX-5a-EQi">
+                                <rect key="frame" x="20" y="339" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Change the master password for login." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ook-xn-KFN">
+                                <rect key="frame" x="20" y="129" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" preservesSuperviewLayoutMargins="YES" text="Data Delete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ut1-7R-pbV">
+                                <rect key="frame" x="20" y="240" width="90" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Touch ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeY-fC-ENa">
+                                <rect key="frame" x="20" y="310" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rOX-RK-9b0">
+                                <rect key="frame" x="531" y="305" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Change the background color." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWv-jh-mU0">
+                                <rect key="frame" x="20" y="199" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QM7-TI-yoJ" firstAttribute="centerX" secondItem="cfR-Ca-C72" secondAttribute="centerX" id="3i3-A1-2tc"/>
-                            <constraint firstItem="eH0-Dh-zPL" firstAttribute="centerX" secondItem="cfR-Ca-C72" secondAttribute="centerX" id="Hmg-dQ-6Gl"/>
+                            <constraint firstItem="Ut1-7R-pbV" firstAttribute="leading" secondItem="cfR-Ca-C72" secondAttribute="leadingMargin" id="1d3-0B-Q7C"/>
+                            <constraint firstItem="6cX-5a-EQi" firstAttribute="leading" secondItem="cfR-Ca-C72" secondAttribute="leadingMargin" id="ADn-5r-RLq"/>
+                            <constraint firstItem="Reg-MA-5UL" firstAttribute="trailing" secondItem="cfR-Ca-C72" secondAttribute="trailingMargin" id="EqI-hn-d31"/>
                             <constraint firstItem="1Oy-WL-0w2" firstAttribute="top" secondItem="Fs6-XC-b41" secondAttribute="bottom" id="PmV-eb-cuG"/>
                             <constraint firstItem="g3e-GO-Chj" firstAttribute="centerX" secondItem="cfR-Ca-C72" secondAttribute="centerX" id="SfC-jM-uZV"/>
+                            <constraint firstItem="rOX-RK-9b0" firstAttribute="trailing" secondItem="cfR-Ca-C72" secondAttribute="trailingMargin" id="YRn-Ez-qIb"/>
+                            <constraint firstItem="TWv-jh-mU0" firstAttribute="leading" secondItem="cfR-Ca-C72" secondAttribute="leadingMargin" id="ZCE-Vh-5AO"/>
                             <constraint firstItem="eBh-Mw-rkb" firstAttribute="top" secondItem="g3e-GO-Chj" secondAttribute="bottom" constant="20" id="ZnV-Xl-e7x"/>
                             <constraint firstItem="1Oy-WL-0w2" firstAttribute="leading" secondItem="cfR-Ca-C72" secondAttribute="leadingMargin" constant="-20" id="bdN-og-GXg"/>
+                            <constraint firstItem="Reg-MA-5UL" firstAttribute="leading" secondItem="cfR-Ca-C72" secondAttribute="leadingMargin" id="dmb-0F-216"/>
                             <constraint firstItem="1Oy-WL-0w2" firstAttribute="centerX" secondItem="cfR-Ca-C72" secondAttribute="centerX" id="gse-bx-vBu"/>
-                            <constraint firstItem="dGV-7X-PEy" firstAttribute="centerX" secondItem="cfR-Ca-C72" secondAttribute="centerX" id="tCB-oh-a52"/>
+                            <constraint firstItem="6cX-5a-EQi" firstAttribute="trailing" secondItem="cfR-Ca-C72" secondAttribute="trailingMargin" id="tuX-n8-x1p"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Oy-WL-0w2" secondAttribute="trailing" constant="-20" id="unD-VL-Pln"/>
+                            <constraint firstItem="TWv-jh-mU0" firstAttribute="trailing" secondItem="cfR-Ca-C72" secondAttribute="trailingMargin" id="xYF-eH-yL0"/>
+                            <constraint firstItem="Ook-xn-KFN" firstAttribute="leading" secondItem="cfR-Ca-C72" secondAttribute="leadingMargin" id="xjp-ea-RsG"/>
+                            <constraint firstItem="7wB-3J-tOm" firstAttribute="trailing" secondItem="cfR-Ca-C72" secondAttribute="trailingMargin" id="y8k-9A-BCE"/>
+                            <constraint firstItem="Ook-xn-KFN" firstAttribute="trailing" secondItem="cfR-Ca-C72" secondAttribute="trailingMargin" id="zbB-Bt-XgO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="DataDeleteSw" destination="7wB-3J-tOm" id="c6t-u7-8Ty"/>
+                        <outlet property="TouchIDSw" destination="rOX-RK-9b0" id="edg-Mw-JfD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xuc-8D-yMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="t74-ee-vCr" userLabel="Exit" sceneMemberID="exit"/>

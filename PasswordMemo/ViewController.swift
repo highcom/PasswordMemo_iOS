@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var navigateLabel: UILabel!
     @IBOutlet weak var inputPassword: UITextField!
     @IBOutlet weak var scvBackGround: UIScrollView!
+    @IBOutlet weak var touchIDButton: UIButton!
     
     let userDefaults = NSUserDefaults.standardUserDefaults()
     var masterPassword: String?
@@ -25,6 +26,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         inputPassword.text = ""
         inputPassword.secureTextEntry = true
+        
+        // タッチIDボタンの有無設定
+        let enableTouchID = userDefaults.objectForKey("EnableTouchID") as? Bool
+        if enableTouchID == nil {
+            touchIDButton.enabled = false
+        } else {
+            touchIDButton.enabled = enableTouchID!
+        }
         
         // マスターパスワードが作成されているかどうかで案内文を変える
         masterPassword = userDefaults.secureStringForKey("masterPw", valid: &val)
@@ -180,4 +189,3 @@ class ViewController: UIViewController {
     }
 
 }
-
