@@ -105,6 +105,11 @@ class PasswordInputView: UIViewController {
     @IBAction func accountTextFieldReturn(sender: UITextField) {
         self.passwordField.becomeFirstResponder()
     }
+    
+    // パスワード入力でReturn
+    @IBAction func passwordTextFieldReturn(sender: UITextField) {
+        self.view.endEditing(true)
+    }
 
     // 画面がタップされたらキーボードをしまう
     @IBAction func tapScreen(sender: UITapGestureRecognizer) {

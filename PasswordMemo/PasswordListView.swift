@@ -24,6 +24,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PasswordListView.enterBackground(_:)), name:"applicationDidEnterBackground", object: nil)
         self.view.backgroundColor = ColorData.getSelectColor()
         passwordListView.backgroundColor = UIColor.clearColor()
         // Do any additional setup after loading the view, typically from a nib.
@@ -35,6 +36,11 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
         dateFormatter.dateFormat = "yyyy/MM/dd"
         
         PasswordEntity.sharedPasswordEntity.readPasswordData()
+    }
+    
+    // アプリがバックグラウンドになった場合はログアウトする
+    func enterBackground(notification: NSNotification){
+        self.dismissViewControllerAnimated(true, completion: nil);
     }
     
     // テーブルの行数

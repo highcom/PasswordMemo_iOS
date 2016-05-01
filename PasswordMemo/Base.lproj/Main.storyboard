@@ -417,6 +417,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
+                                            <action selector="passwordTextFieldReturn:" destination="eVO-df-lZV" eventType="editingDidEndOnExit" id="Jze-8U-dI2"/>
                                             <outlet property="delegate" destination="eVO-df-lZV" id="kEI-Xz-LJg"/>
                                         </connections>
                                     </textField>
