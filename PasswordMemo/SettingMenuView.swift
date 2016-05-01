@@ -14,6 +14,7 @@ class SettingMenuView: UIViewController {
     @IBOutlet weak var TouchIDSw: UISwitch!
     let userDefaults = NSUserDefaults.standardUserDefaults()
     var EnableTouchID: Bool?
+    var EnableDataDelete: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,11 @@ class SettingMenuView: UIViewController {
         
         // データ削除機能設定
         DataDeleteSw.addTarget(self, action: #selector(SettingMenuView.onClickDataDeleteSwitch(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        EnableDataDelete = userDefaults.objectForKey("EnableDataDelete") as? Bool
+        if EnableDataDelete == nil {
+            EnableDataDelete = false
+        }
+        DataDeleteSw.on = EnableDataDelete!
         
         // タッチIDの有効・無効設定
         TouchIDSw.addTarget(self, action: #selector(SettingMenuView.onClickTouchIDSwitch(_:)), forControlEvents: UIControlEvents.ValueChanged)
@@ -37,17 +43,21 @@ class SettingMenuView: UIViewController {
     
     // データ削除機能スイッチ
     func onClickDataDeleteSwitch(sender: UISwitch) {
-        
+        if sender.on {
+            userDefaults.setObject(true, forKey: "EnableDataDelete")
+        } else {
+            userDefaults.setObject(false, forKey: "EnableDataDelete")
+        }
+        userDefaults.synchronize()
     }
     
     // タッチID有効スイッチ
     func onClickTouchIDSwitch(sender: UISwitch) {
         if sender.on {
             userDefaults.setObject(true, forKey: "EnableTouchID")
-            userDefaults.synchronize()
         } else {
             userDefaults.setObject(false, forKey: "EnableTouchID")
-            userDefaults.synchronize()
         }
+        userDefaults.synchronize()
     }
 }

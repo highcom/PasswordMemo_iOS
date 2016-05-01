@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     let userDefaults = NSUserDefaults.standardUserDefaults()
     var masterPassword: String?
     var val: ObjCBool = ObjCBool.init(true)
+    var enableDataDelete: Bool?
+    var incorrectPwTimes: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         inputPassword.text = ""
         inputPassword.secureTextEntry = true
+        
+        // 全データ削除機能の有無設定
+        enableDataDelete = userDefaults.objectForKey("EnableDataDelete") as? Bool
+        if enableDataDelete == nil {
+            enableDataDelete = false
+        }
         
         // タッチIDボタンの有無設定
         let enableTouchID = userDefaults.objectForKey("EnableTouchID") as? Bool
@@ -104,9 +112,37 @@ class ViewController: UIViewController {
         } else {
             // マスターパスワードが作成済みであればパスワードの照合
             if masterPassword == inputPassword.text {
+                incorrectPwTimes = 0
                 self.performSegueWithIdentifier("listViewSegue", sender: nil)
             } else {
-                navigateLabel.text = "Password is incorrect!"
+                if enableDataDelete == false {
+                    navigateLabel.text = "Password is incorrect!"
+                    return
+                }
+                
+                // パスワードを5回連続で間違ったらデータをすべて削除する
+                incorrectPwTimes += 1
+                if incorrectPwTimes >= 5 {
+                    // マスターパスワードを削除
+                    userDefaults.removeObjectForKey("masterPw")
+                    // 全CoreDataを削除
+                    for item in PasswordEntity.sharedPasswordEntity.passwordItems {
+                        PasswordEntity.sharedPasswordEntity.deletePasswordData(item as! PasswordEntity)
+                    }
+                    
+                    // データをすべて削除したことをアラートに出す
+                    let alertController = UIAlertController(title: "Caution!", message: "All data Delete!", preferredStyle: .Alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    presentViewController(alertController, animated: true, completion: nil)
+                    
+                    // 画面を再表示
+                    self.viewDidLoad()
+                } else {
+                    navigateLabel.text = "Password is incorrect! [" + String(incorrectPwTimes) + " times]"
+                }
             }
         }
     }
