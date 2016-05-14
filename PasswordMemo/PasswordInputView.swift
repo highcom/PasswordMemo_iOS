@@ -17,6 +17,9 @@ class PasswordInputView: UIViewController {
     @IBOutlet weak var memoTextView: PlaceHolderTextView!
     @IBOutlet weak var scvBackGround: UIScrollView!
     
+    var now: NSDate = NSDate()
+    var deltaTime: NSTimeInterval = 0.0
+    
     var titleName: String = ""
     var accountName: String = ""
     var password: String = ""
@@ -25,6 +28,8 @@ class PasswordInputView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PasswordInputView.enterBackground(_:)), name:"applicationDidEnterBackground", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PasswordInputView.enterForeground(_:)), name:"applicationWillEnterForeground", object: nil)
         self.view.backgroundColor = ColorData.getSelectColor()
         // Do any additional setup after loading the view.
         memoTextView.layer.borderWidth = 0.5
@@ -43,6 +48,21 @@ class PasswordInputView: UIViewController {
         memoTextView.text = memo
         if memoTextView.text.characters.count == 0 {
             memoTextView.placeHolder = "input memo"
+        }
+    }
+    
+    // アプリがバックグラウンドになった場合
+    func enterBackground(notification: NSNotification){
+        now = NSDate()
+    }
+    
+    // アプリがフォアグラウンドになった場合
+    func enterForeground(notification: NSNotification){
+        deltaTime = NSDate().timeIntervalSinceDate(now)
+        // バックグラウンドになってから2分以上経過した場合はログアウトする
+        if (deltaTime > 120) {
+            let targetViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginMenu")
+            self.presentViewController( targetViewController, animated: true, completion: nil)
         }
     }
     

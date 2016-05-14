@@ -12,12 +12,18 @@ class SettingMenuView: UIViewController {
 
     @IBOutlet weak var DataDeleteSw: UISwitch!
     @IBOutlet weak var TouchIDSw: UISwitch!
+
+    var now: NSDate = NSDate()
+    var deltaTime: NSTimeInterval = 0.0
+    
     let userDefaults = NSUserDefaults.standardUserDefaults()
     var EnableTouchID: Bool?
     var EnableDataDelete: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SettingMenuView.enterBackground(_:)), name:"applicationDidEnterBackground", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SettingMenuView.enterForeground(_:)), name:"applicationWillEnterForeground", object: nil)
         self.view.backgroundColor = ColorData.getSelectColor()
         
         // データ削除機能設定
@@ -35,6 +41,21 @@ class SettingMenuView: UIViewController {
             EnableTouchID = false
         }
         TouchIDSw.on = EnableTouchID!
+    }
+    
+    // アプリがバックグラウンドになった場合
+    func enterBackground(notification: NSNotification){
+        now = NSDate()
+    }
+    
+    // アプリがフォアグラウンドになった場合
+    func enterForeground(notification: NSNotification){
+        deltaTime = NSDate().timeIntervalSinceDate(now)
+        // バックグラウンドになってから2分以上経過した場合はログアウトする
+        if (deltaTime > 120) {
+            let targetViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginMenu")
+            self.presentViewController( targetViewController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func returnSettingMenu(segue: UIStoryboardSegue) {

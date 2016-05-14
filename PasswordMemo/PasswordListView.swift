@@ -11,6 +11,9 @@ import UIKit
 class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var passwordListView: UITableView!
 
+    var now: NSDate = NSDate()
+    var deltaTime: NSTimeInterval = 0.0
+
     var locale = NSLocale.currentLocale()
     let dateFormatter = NSDateFormatter()
     var editRow: Int = 0
@@ -25,6 +28,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PasswordListView.enterBackground(_:)), name:"applicationDidEnterBackground", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PasswordListView.enterForeground(_:)), name:"applicationWillEnterForeground", object: nil)
         self.view.backgroundColor = ColorData.getSelectColor()
         passwordListView.backgroundColor = UIColor.clearColor()
         // Do any additional setup after loading the view, typically from a nib.
@@ -38,11 +42,21 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
         PasswordEntity.sharedPasswordEntity.readPasswordData()
     }
     
-    // アプリがバックグラウンドになった場合はログアウトする
+    // アプリがバックグラウンドになった場合
     func enterBackground(notification: NSNotification){
-        self.dismissViewControllerAnimated(true, completion: nil);
+        now = NSDate()
     }
     
+    // アプリがフォアグラウンドになった場合
+    func enterForeground(notification: NSNotification){
+        deltaTime = NSDate().timeIntervalSinceDate(now)
+        // バックグラウンドになってから2分以上経過した場合はログアウトする
+        if (deltaTime > 120) {
+            let targetViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginMenu")
+            self.presentViewController( targetViewController, animated: true, completion: nil)
+        }
+    }
+
     // テーブルの行数
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var tableCount = 0

@@ -11,6 +11,10 @@ import UIKit
 class SelectColorView: UIViewController {
     
     @IBOutlet weak var colorPicker: UIPickerView!
+
+    var now: NSDate = NSDate()
+    var deltaTime: NSTimeInterval = 0.0
+    
     let userDefaults = NSUserDefaults.standardUserDefaults()
     var selectColorRow: Int = 0
     var colorNameArray: NSArray = ["white",  "gray",   "brown",  "blue",   "green",  "pink",   "yellow"]
@@ -18,6 +22,8 @@ class SelectColorView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SelectColorView.enterBackground(_:)), name:"applicationDidEnterBackground", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SelectColorView.enterForeground(_:)), name:"applicationWillEnterForeground", object: nil)
         self.view.backgroundColor = ColorData.getSelectColor()
         
         // 保存されたカラーコードと同じ値のrowを取得する
@@ -40,6 +46,21 @@ class SelectColorView: UIViewController {
         }
         
         colorPicker.selectRow(selectColorRow, inComponent: 0, animated: true)
+    }
+    
+    // アプリがバックグラウンドになった場合
+    func enterBackground(notification: NSNotification){
+        now = NSDate()
+    }
+    
+    // アプリがフォアグラウンドになった場合
+    func enterForeground(notification: NSNotification){
+        deltaTime = NSDate().timeIntervalSinceDate(now)
+        // バックグラウンドになってから2分以上経過した場合はログアウトする
+        if (deltaTime > 120) {
+            let targetViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginMenu")
+            self.presentViewController( targetViewController, animated: true, completion: nil)
+        }
     }
     
     // 表示列

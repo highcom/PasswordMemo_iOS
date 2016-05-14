@@ -169,6 +169,7 @@ class ViewController: UIViewController {
                 if success {
                     // 画面遷移はmainスレッドで実行する
                     self.dispatch_async_main {
+                        self.incorrectPwTimes = 0
                         self.performSegueWithIdentifier("listViewSegue", sender: nil)
                     }
                 } else {

@@ -14,6 +14,9 @@ class PasswordReferenceView: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var memoTextView: PlaceHolderTextView!
 
+    var now: NSDate = NSDate()
+    var deltaTime: NSTimeInterval = 0.0
+    
     var titleName: String = ""
     var accountName: String = ""
     var password: String = ""
@@ -21,6 +24,8 @@ class PasswordReferenceView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PasswordReferenceView.enterBackground(_:)), name:"applicationDidEnterBackground", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PasswordReferenceView.enterForeground(_:)), name:"applicationWillEnterForeground", object: nil)
         self.view.backgroundColor = ColorData.getSelectColor()
         // Do any additional setup after loading the view.
         memoTextView.layer.borderWidth = 0.5
@@ -37,6 +42,21 @@ class PasswordReferenceView: UIViewController {
         memoTextView.editable = false
     }
 
+    // アプリがバックグラウンドになった場合
+    func enterBackground(notification: NSNotification){
+        now = NSDate()
+    }
+    
+    // アプリがフォアグラウンドになった場合
+    func enterForeground(notification: NSNotification){
+        deltaTime = NSDate().timeIntervalSinceDate(now)
+        // バックグラウンドになってから2分以上経過した場合はログアウトする
+        if (deltaTime > 120) {
+            let targetViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginMenu")
+            self.presentViewController( targetViewController, animated: true, completion: nil)
+        }
+    }
+    
     // テキストフィールドがタップされた場合
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         // クリップボードにコピー
