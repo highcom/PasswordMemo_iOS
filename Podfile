@@ -4,7 +4,10 @@
 # use_frameworks!
 
 target 'PasswordMemo' do
-
+post_install do | installer |
+  require 'fileutils'
+    FileUtils.cp_r('Pods/Target Support Files/Pods-PasswordMemo/Pods-PasswordMemo-acknowledgements.plist', 'PasswordMemo/Settings.bundle/Acknowledgements.plist', :remove_destination => true)
+end
 end
 
 target 'PasswordMemoTests' do
