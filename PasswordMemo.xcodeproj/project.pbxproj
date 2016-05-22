@@ -38,6 +38,7 @@
 		B3964C741C5474D500420B4F /* PasswordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3964C731C5474D500420B4F /* PasswordListView.swift */; };
 		B3FC0E821CEFF7AA008178A0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3FC0E841CEFF7AA008178A0 /* Localizable.strings */; };
 		B3FC0E861CF14AB9008178A0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B3FC0E851CF14AB9008178A0 /* Settings.bundle */; };
+		B3FC0E8C1CF1FA4D008178A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3FC0E8E1CF1FA4D008178A0 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		B3964C731C5474D500420B4F /* PasswordListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordListView.swift; sourceTree = "<group>"; };
 		B3FC0E831CEFF7AA008178A0 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B3FC0E851CF14AB9008178A0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		B3FC0E8D1CF1FA4D008178A0 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +241,7 @@
 				B315AD461C79DCB000E91401 /* SettingMenuView.swift */,
 				B315AD481C79DD2B00E91401 /* ChangeMasterPasswordView.swift */,
 				B302ABBC1CD2F66100F1D792 /* SelectColorView.swift */,
+				B3FC0E8E1CF1FA4D008178A0 /* InfoPlist.strings */,
 			);
 			path = PasswordMemo;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				B30B2D7F1CCC57850019B44E /* .gitmodules in Resources */,
 				B3964C4D1C54724D00420B4F /* Assets.xcassets in Resources */,
 				B30B2D821CCC57850019B44E /* EncryptedCoreData.podspec in Resources */,
+				B3FC0E8C1CF1FA4D008178A0 /* InfoPlist.strings in Resources */,
 				B30B2DAE1CCC57850019B44E /* LICENSE in Resources */,
 				B3964C481C54724D00420B4F /* Main.storyboard in Resources */,
 			);
@@ -515,6 +519,14 @@
 			);
 			name = Localizable.strings;
 			path = PasswordMemo;
+			sourceTree = "<group>";
+		};
+		B3FC0E8E1CF1FA4D008178A0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3FC0E8D1CF1FA4D008178A0 /* ja */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

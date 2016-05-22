@@ -51,6 +51,8 @@ class ViewController: UIViewController {
         } else {
             navigateLabel.text = NSLocalizedString("Enter the master password.", comment: "")
         }
+        
+        inputPassword.placeholder = NSLocalizedString("input master password", comment: "")
     }
     
     // キーボードが表示された時の位置の設定
@@ -179,7 +181,7 @@ class ViewController: UIViewController {
                     case LAError.UserCancel.rawValue:
                         message = NSLocalizedString("Authentication has been canceled.", comment: "")
                     case LAError.UserFallback.rawValue:
-                        message = NSLocalizedString("Select the path code input.", comment: "")
+                        message = NSLocalizedString("Select the password input.", comment: "")
                     case LAError.PasscodeNotSet.rawValue:
                         message = NSLocalizedString("Passcode is not set.", comment: "")
                     case LAError.SystemCancel.rawValue:

@@ -5,9 +5,9 @@
   Created by 晃一 on 2016/05/21.
   Copyright © 2016年 HIGHCOM. All rights reserved.
 */
-
-"It will create a new password." = "新規マスターパスワードを作成";
-"Enter the master password." = "マスターパスワードを入力";
+"It will create a new password." = "新規マスターパスワードを作成します";
+"input master password" = "マスターパスワード入力";
+"Enter the master password." = "マスターパスワードを入力して下さい";
 "Password is empty!" = "パスワードが空です";
 "Password is incorrect!" = "マスターパスワードが違います";
 "Password is incorrect! [" = "マスターパスワード間違い [";
@@ -16,7 +16,7 @@
 "Authentication of login." = "ログインの認証をします";
 "Authentication failure." = "認証失敗";
 "Authentication has been canceled." = "認証がキャンセルされました";
-"Select the path code input." = "パスコードの入力を選択して下さい";
+"Select the password input." = "パスワードを入力して下さい";
 "Passcode is not set." = "パスコードが設定されていません";
 "It has been canceled by the system." = "システムによってキャンセルされました";
 "Unknown error." = "不明なエラー";

@@ -1,0 +1,8 @@
+/* 
+  infoPlist.strings
+  PasswordMemo
+
+  Created by 晃一 on 2016/05/22.
+  Copyright © 2016年 HIGHCOM. All rights reserved.
+*/
+CFBundleDisplayName = "パスメモ";
