@@ -1,0 +1,93 @@
+
+/* Class = "UINavigationItem"; title = "Password List"; ObjectID = "0JR-hE-zY0"; */
+"0JR-hE-zY0.title" = "パスワード一覧";
+
+/* Class = "UINavigationItem"; title = "Setting"; ObjectID = "3Qs-pe-eue"; */
+"3Qs-pe-eue.title" = "設定";
+
+/* Class = "UILabel"; text = "Enable login in touch ID."; ObjectID = "6cX-5a-EQi"; */
+"6cX-5a-EQi.text" = "タッチIDでのログインを有効にする";
+
+/* Class = "UIButton"; normalTitle = "Touch ID"; ObjectID = "AsN-Yl-zho"; */
+"AsN-Yl-zho.normalTitle" = "タッチID";
+
+/* Class = "UINavigationItem"; title = "New Data"; ObjectID = "Avp-nA-Epx"; */
+"Avp-nA-Epx.title" = "新規作成";
+
+/* Class = "UILabel"; text = "0000/00/00"; ObjectID = "BDl-io-tXe"; */
+"BDl-io-tXe.text" = "0000/00/00";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "Bsz-n2-yOS"; */
+"Bsz-n2-yOS.text" = "パスワード";
+
+/* Class = "UINavigationItem"; title = "Master Password"; ObjectID = "HK1-JX-SmS"; */
+"HK1-JX-SmS.title" = "マスターパスワード";
+
+/* Class = "UILabel"; text = "Account ID"; ObjectID = "IXX-NQ-IHW"; */
+"IXX-NQ-IHW.text" = "アカウントID";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "K4l-O5-IFo"; */
+"K4l-O5-IFo.normalTitle" = "ログイン";
+
+/* Class = "UIBarButtonItem"; title = "End"; ObjectID = "OCe-rg-hr1"; */
+"OCe-rg-hr1.title" = "終了";
+
+/* Class = "UILabel"; text = "Change the master password for login."; ObjectID = "Ook-xn-KFN"; */
+"Ook-xn-KFN.text" = "ログイン時のマスターパスワードの変更";
+
+/* Class = "UIButton"; normalTitle = "Change Master Password"; ObjectID = "QM7-TI-yoJ"; */
+"QM7-TI-yoJ.normalTitle" = "マスターパスワード変更";
+
+/* Class = "UILabel"; text = "if you enter an incorrect password 5 times."; ObjectID = "Reg-MA-5UL"; */
+"Reg-MA-5UL.text" = "パスワードを5回連続で間違えた場合";
+
+/* Class = "UILabel"; text = "Change the background color."; ObjectID = "TWv-jh-mU0"; */
+"TWv-jh-mU0.text" = "背景色の変更";
+
+/* Class = "UILabel"; text = "Data Delete"; ObjectID = "Ut1-7R-pbV"; */
+"Ut1-7R-pbV.text" = "データ削除";
+
+/* Class = "UINavigationItem"; title = "Select Color"; ObjectID = "VBa-SR-zBf"; */
+"VBa-SR-zBf.title" = "背景色選択";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "YIH-dL-OiH"; */
+"YIH-dL-OiH.text" = "タイトル";
+
+/* Class = "UILabel"; text = "Touch ID"; ObjectID = "YeY-fC-ENa"; */
+"YeY-fC-ENa.text" = "タッチID";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cfl-Ie-BG0"; */
+"cfl-Ie-BG0.text" = "ラベル";
+
+/* Class = "UIButton"; normalTitle = "Change Color"; ObjectID = "dGV-7X-PEy"; */
+"dGV-7X-PEy.normalTitle" = "背景色の変更";
+
+/* Class = "UIButton"; normalTitle = "Setting"; ObjectID = "e2W-Bx-OJP"; */
+"e2W-Bx-OJP.normalTitle" = "設定";
+
+/* Class = "UILabel"; text = "Memo"; ObjectID = "ezJ-6Y-XOT"; */
+"ezJ-6Y-XOT.text" = "メモ";
+
+/* Class = "UILabel"; text = "Account ID"; ObjectID = "f7g-fP-Iq9"; */
+"f7g-fP-Iq9.text" = "アカウントID";
+
+/* Class = "UILabel"; text = "Copyright (c) 2016 Koichi Inoue"; ObjectID = "g3e-GO-Chj"; */
+"g3e-GO-Chj.text" = "Copyright (c) 2016 Koichi Inoue";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "j6T-Ke-xWK"; */
+"j6T-Ke-xWK.text" = "パスワード";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "lRe-71-cHk"; */
+"lRe-71-cHk.title" = "タイトル";
+
+/* Class = "UINavigationItem"; title = "Password Memo"; ObjectID = "lYb-ov-dmx"; */
+"lYb-ov-dmx.title" = "パスワードメモ";
+
+/* Class = "UILabel"; text = "Input new master password."; ObjectID = "nEp-ec-5nR"; */
+"nEp-ec-5nR.text" = "新規マスターパスワードを入力";
+
+/* Class = "UILabel"; text = "Memo"; ObjectID = "pT7-x1-85d"; */
+"pT7-x1-85d.text" = "メモ";
+
+/* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "tbr-Fd-H96"; */
+"tbr-Fd-H96.normalTitle" = "編集";

@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  PasswordMemo
+
+  Created by 晃一 on 2016/05/21.
+  Copyright © 2016年 HIGHCOM. All rights reserved.
+*/
+
+"It will create a new password." = "新規マスターパスワードを作成";
+"Enter the master password." = "マスターパスワードを入力";
+"Password is empty!" = "パスワードが空です";
+"Password is incorrect!" = "マスターパスワードが違います";
+"Password is incorrect! [" = "マスターパスワード間違い [";
+" times]" = " 回目]";
+"First to create a password." = "最初にマスターパスワードを作成して下さい";
+"Authentication of login." = "ログインの認証をします";
+"Authentication failure." = "認証失敗";
+"Authentication has been canceled." = "認証がキャンセルされました";
+"Select the path code input." = "パスコードの入力を選択して下さい";
+"Passcode is not set." = "パスコードが設定されていません";
+"It has been canceled by the system." = "システムによってキャンセルされました";
+"Unknown error." = "不明なエラー";
+"It does not correspond to TouchID." = "タッチIDに対応していない端末です";
+"Edit Data" = "データ編集";
+"input memo" = "メモを入力";
+"Copy to clipboard." = "クリップボードにコピーしました";
+"Input password is different!" = "入力した2つのパスワードが異なります";
+"It is same as the master password." = "現在のマスターパスワードと同じです";

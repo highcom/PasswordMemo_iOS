@@ -64,7 +64,7 @@ class PasswordReferenceView: UIViewController {
         clipboard.setValue(textField.text!, forPasteboardType: "public.text")
         
         // クリップボードにコピーしたことをアラートに出す
-        let alertController = UIAlertController(title: textField.text, message: "Copy to clipboard.", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: textField.text, message: NSLocalizedString("Copy to clipboard.", comment: ""), preferredStyle: .Alert)
         
         let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
         alertController.addAction(defaultAction)

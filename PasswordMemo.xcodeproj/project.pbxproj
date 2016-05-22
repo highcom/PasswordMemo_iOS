@@ -36,6 +36,7 @@
 		B3964C5B1C54724D00420B4F /* PasswordMemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3964C5A1C54724D00420B4F /* PasswordMemoTests.swift */; };
 		B3964C661C54724D00420B4F /* PasswordMemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3964C651C54724D00420B4F /* PasswordMemoUITests.swift */; };
 		B3964C741C5474D500420B4F /* PasswordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3964C731C5474D500420B4F /* PasswordListView.swift */; };
+		B3FC0E821CEFF7AA008178A0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3FC0E841CEFF7AA008178A0 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B30288241CE805E2005771FE /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		B30288251CE805E2005771FE /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B302ABBC1CD2F66100F1D792 /* SelectColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectColorView.swift; sourceTree = "<group>"; };
 		B3040A551C57A00E00B73E4E /* PasswordInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
 		B30B2D191CCC57850019B44E /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 		B3964C651C54724D00420B4F /* PasswordMemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordMemoUITests.swift; sourceTree = "<group>"; };
 		B3964C671C54724D00420B4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3964C731C5474D500420B4F /* PasswordListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordListView.swift; sourceTree = "<group>"; };
+		B3FC0E831CEFF7AA008178A0 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +193,7 @@
 		B3964C361C54724D00420B4F = {
 			isa = PBXGroup;
 			children = (
+				B3FC0E841CEFF7AA008178A0 /* Localizable.strings */,
 				B30B2D181CCC57850019B44E /* encrypted-core-data */,
 				B3165DCD1C9CFE1E0006BFB4 /* sqlcipher.xcodeproj */,
 				B3165DCB1C9CFA4D0006BFB4 /* Security.framework */,
@@ -376,6 +381,7 @@
 			files = (
 				B30B2D801CCC57850019B44E /* .travis.yml in Resources */,
 				B30B2DB01CCC57850019B44E /* stringOutput.jpg in Resources */,
+				B3FC0E821CEFF7AA008178A0 /* Localizable.strings in Resources */,
 				B30B2D7E1CCC57850019B44E /* .gitignore in Resources */,
 				B3964C501C54724D00420B4F /* LaunchScreen.storyboard in Resources */,
 				B30B2D811CCC57850019B44E /* diagram.jpg in Resources */,
@@ -467,6 +473,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B3964C471C54724D00420B4F /* Base */,
+				B30288241CE805E2005771FE /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -475,8 +482,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				B3964C4F1C54724D00420B4F /* Base */,
+				B30288251CE805E2005771FE /* ja */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B3FC0E841CEFF7AA008178A0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3FC0E831CEFF7AA008178A0 /* ja */,
+			);
+			name = Localizable.strings;
+			path = PasswordMemo;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

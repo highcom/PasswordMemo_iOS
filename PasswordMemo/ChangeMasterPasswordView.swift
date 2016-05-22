@@ -52,10 +52,10 @@ class ChangeMasterPasswordView: UIViewController {
         //masterPassword = userDefaults.objectForKey("masterPw") as? String
         if inputPassword1.text != inputPassword2.text {
             // 入力が違っていたらエラー
-            checkResultLabel.text = "Input password is different!"
+            checkResultLabel.text = NSLocalizedString("Input password is different!", comment: "")
         } else if masterPassword == inputPassword1.text {
             // マスターパスワードと同じだったらエラー
-            checkResultLabel.text = "It is the same as the master password."
+            checkResultLabel.text = NSLocalizedString("It is same as the master password.", comment: "")
         } else {
             // マスターパスワードが作成されていない場合は新規作成
             userDefaults.setSecureObject(inputPassword1.text, forKey: "masterPw")

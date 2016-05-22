@@ -47,9 +47,9 @@ class ViewController: UIViewController {
         masterPassword = userDefaults.secureStringForKey("masterPw", valid: &val)
         //masterPassword = userDefaults.objectForKey("masterPw") as? String
         if masterPassword == nil {
-            navigateLabel.text = "It will create a new password."
+            navigateLabel.text = NSLocalizedString("It will create a new password.", comment: "")
         } else {
-            navigateLabel.text = "Enter the master password."
+            navigateLabel.text = NSLocalizedString("Enter the master password.", comment: "")
         }
     }
     
@@ -101,7 +101,7 @@ class ViewController: UIViewController {
     @IBAction func loginButton(sender: AnyObject) {
         if masterPassword == nil {
             if inputPassword.text == "" {
-                navigateLabel.text = "Password is empty!"
+                navigateLabel.text = NSLocalizedString("Password is empty!", comment: "")
                 return
             }
             // マスターパスワードが作成されていない場合は新規作成
@@ -116,7 +116,7 @@ class ViewController: UIViewController {
                 self.performSegueWithIdentifier("listViewSegue", sender: nil)
             } else {
                 if enableDataDelete == false {
-                    navigateLabel.text = "Password is incorrect!"
+                    navigateLabel.text = NSLocalizedString("Password is incorrect!", comment: "")
                     return
                 }
                 
@@ -141,7 +141,7 @@ class ViewController: UIViewController {
                     // 画面を再表示
                     self.viewDidLoad()
                 } else {
-                    navigateLabel.text = "Password is incorrect! [" + String(incorrectPwTimes) + " times]"
+                    navigateLabel.text = NSLocalizedString("Password is incorrect! [", comment: "") + String(incorrectPwTimes) + NSLocalizedString(" times]", comment: "")
                 }
             }
         }
@@ -150,14 +150,14 @@ class ViewController: UIViewController {
     // TouchIDによるログインボタン
     @IBAction func loginTouchID(sender: AnyObject) {
         if masterPassword == nil {
-            navigateLabel.text = "First to create a password."
+            navigateLabel.text = NSLocalizedString("First to create a password.", comment: "")
             return
         }
         
         let context = LAContext()
         var message = ""
         var error :NSError?
-        let localizedReason = "Authentication of login."
+        let localizedReason = NSLocalizedString("Authentication of login.", comment: "")
         
         // TouchID認証はサブスレッドで実行される
         if context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error){
@@ -175,17 +175,17 @@ class ViewController: UIViewController {
                 } else {
                     switch error!.code {
                     case LAError.AuthenticationFailed.rawValue:
-                        message = "Authentication failure."
+                        message = NSLocalizedString("Authentication failure.", comment: "")
                     case LAError.UserCancel.rawValue:
-                        message = "Authentication has been canceled."
+                        message = NSLocalizedString("Authentication has been canceled.", comment: "")
                     case LAError.UserFallback.rawValue:
-                        message = "Select the path code input."
+                        message = NSLocalizedString("Select the path code input.", comment: "")
                     case LAError.PasscodeNotSet.rawValue:
-                        message = "Passcode is not set."
+                        message = NSLocalizedString("Passcode is not set.", comment: "")
                     case LAError.SystemCancel.rawValue:
-                        message = "It has been canceled by the system."
+                        message = NSLocalizedString("It has been canceled by the system.", comment: "")
                     default:
-                        message = "Unknown error."
+                        message = NSLocalizedString("Unknown error.", comment: "")
                         return
                     }
 
@@ -197,7 +197,7 @@ class ViewController: UIViewController {
             
         }else{
             //TocuhIDに対応していない場合
-            navigateLabel.text = "It does not correspond to TouchID."
+            navigateLabel.text = NSLocalizedString("It does not correspond to TouchID.", comment: "")
         }
     }
 

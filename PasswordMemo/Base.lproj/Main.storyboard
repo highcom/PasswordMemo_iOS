@@ -535,15 +535,9 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM7-TI-yoJ">
-                                <rect key="frame" x="20" y="100" width="175" height="30"/>
-                                <state key="normal" title="Change Master Password"/>
-                                <connections>
-                                    <segue destination="yN3-a4-MuW" kind="presentation" id="jQ8-yp-Iod"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGV-7X-PEy">
-                                <rect key="frame" x="20" y="170" width="94" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGV-7X-PEy">
+                                <rect key="frame" x="20" y="168" width="105" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Change Color"/>
                                 <connections>
                                     <segue destination="tsp-dn-3je" kind="presentation" id="K9s-Nq-wRf"/>
@@ -576,7 +570,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Touch ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeY-fC-ENa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Touch ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeY-fC-ENa">
                                 <rect key="frame" x="20" y="310" width="68" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -594,9 +588,17 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Copyright (c) 2016 Koichi Inoue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3e-GO-Chj">
                                 <rect key="frame" x="205" y="559" width="191" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM7-TI-yoJ">
+                                <rect key="frame" x="20" y="97" width="195" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Change Master Password"/>
+                                <connections>
+                                    <segue destination="yN3-a4-MuW" kind="presentation" id="jQ8-yp-Iod"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -610,7 +612,10 @@
                             <constraint firstItem="eBh-Mw-rkb" firstAttribute="top" secondItem="g3e-GO-Chj" secondAttribute="bottom" constant="20" id="ZnV-Xl-e7x"/>
                             <constraint firstItem="1Oy-WL-0w2" firstAttribute="leading" secondItem="cfR-Ca-C72" secondAttribute="leadingMargin" constant="-20" id="bdN-og-GXg"/>
                             <constraint firstItem="Reg-MA-5UL" firstAttribute="leading" secondItem="cfR-Ca-C72" secondAttribute="leadingMargin" id="dmb-0F-216"/>
+                            <constraint firstItem="YeY-fC-ENa" firstAttribute="leading" secondItem="cfR-Ca-C72" secondAttribute="leadingMargin" id="f6p-me-BNw"/>
+                            <constraint firstItem="QM7-TI-yoJ" firstAttribute="leading" secondItem="cfR-Ca-C72" secondAttribute="leadingMargin" id="fzL-OX-xkl"/>
                             <constraint firstItem="1Oy-WL-0w2" firstAttribute="centerX" secondItem="cfR-Ca-C72" secondAttribute="centerX" id="gse-bx-vBu"/>
+                            <constraint firstItem="dGV-7X-PEy" firstAttribute="leading" secondItem="cfR-Ca-C72" secondAttribute="leadingMargin" id="o6p-Yf-M9o"/>
                             <constraint firstItem="6cX-5a-EQi" firstAttribute="trailing" secondItem="cfR-Ca-C72" secondAttribute="trailingMargin" id="tuX-n8-x1p"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Oy-WL-0w2" secondAttribute="trailing" constant="-20" id="unD-VL-Pln"/>
                             <constraint firstItem="TWv-jh-mU0" firstAttribute="trailing" secondItem="cfR-Ca-C72" secondAttribute="trailingMargin" id="xYF-eH-yL0"/>

@@ -37,7 +37,7 @@ class PasswordInputView: UIViewController {
         memoTextView.layer.cornerRadius = 5
         
         if titleName != "" {
-            operationName.title = "Edit Data"
+            operationName.title = NSLocalizedString("Edit Data", comment: "")
         }
         // 編集の場合は前の画面から値が渡されている
         titleField.text = titleName
@@ -47,7 +47,7 @@ class PasswordInputView: UIViewController {
         // メモが何も入力されていない場合はプレースホルダーを表示
         memoTextView.text = memo
         if memoTextView.text.characters.count == 0 {
-            memoTextView.placeHolder = "input memo"
+            memoTextView.placeHolder = NSLocalizedString("input memo", comment: "")
         }
     }
     
