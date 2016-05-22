@@ -585,12 +585,6 @@
                                 <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Copyright (c) 2016 Koichi Inoue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3e-GO-Chj">
-                                <rect key="frame" x="205" y="559" width="191" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM7-TI-yoJ">
                                 <rect key="frame" x="20" y="97" width="195" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -606,10 +600,8 @@
                             <constraint firstItem="6cX-5a-EQi" firstAttribute="leading" secondItem="cfR-Ca-C72" secondAttribute="leadingMargin" id="ADn-5r-RLq"/>
                             <constraint firstItem="Reg-MA-5UL" firstAttribute="trailing" secondItem="cfR-Ca-C72" secondAttribute="trailingMargin" id="EqI-hn-d31"/>
                             <constraint firstItem="1Oy-WL-0w2" firstAttribute="top" secondItem="Fs6-XC-b41" secondAttribute="bottom" id="PmV-eb-cuG"/>
-                            <constraint firstItem="g3e-GO-Chj" firstAttribute="centerX" secondItem="cfR-Ca-C72" secondAttribute="centerX" id="SfC-jM-uZV"/>
                             <constraint firstItem="rOX-RK-9b0" firstAttribute="trailing" secondItem="cfR-Ca-C72" secondAttribute="trailingMargin" id="YRn-Ez-qIb"/>
                             <constraint firstItem="TWv-jh-mU0" firstAttribute="leading" secondItem="cfR-Ca-C72" secondAttribute="leadingMargin" id="ZCE-Vh-5AO"/>
-                            <constraint firstItem="eBh-Mw-rkb" firstAttribute="top" secondItem="g3e-GO-Chj" secondAttribute="bottom" constant="20" id="ZnV-Xl-e7x"/>
                             <constraint firstItem="1Oy-WL-0w2" firstAttribute="leading" secondItem="cfR-Ca-C72" secondAttribute="leadingMargin" constant="-20" id="bdN-og-GXg"/>
                             <constraint firstItem="Reg-MA-5UL" firstAttribute="leading" secondItem="cfR-Ca-C72" secondAttribute="leadingMargin" id="dmb-0F-216"/>
                             <constraint firstItem="YeY-fC-ENa" firstAttribute="leading" secondItem="cfR-Ca-C72" secondAttribute="leadingMargin" id="f6p-me-BNw"/>

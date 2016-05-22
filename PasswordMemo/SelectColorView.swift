@@ -17,8 +17,20 @@ class SelectColorView: UIViewController {
     
     let userDefaults = NSUserDefaults.standardUserDefaults()
     var selectColorRow: Int = 0
-    var colorNameArray: NSArray = ["white",  "gray",   "brown",  "blue",   "green",  "pink",   "yellow"]
-    var colorCodeArray: NSArray = [0xFFFFFF, 0xDDDDDD, 0xE4D4A1, 0xD7EEFF, 0xE6FFE9, 0xFFD5EC, 0xFFFFDD]
+    var colorNameArray: NSArray = [NSLocalizedString("white", comment: ""),
+                                   NSLocalizedString("gray", comment: ""),
+                                   NSLocalizedString("brown", comment: ""),
+                                   NSLocalizedString("blue", comment: ""),
+                                   NSLocalizedString("green", comment: ""),
+                                   NSLocalizedString("pink", comment: ""),
+                                   NSLocalizedString("yellow", comment: "")]
+    var colorCodeArray: NSArray = [0xFFFFFF,
+                                   0xDDDDDD,
+                                   0xE4D4A1,
+                                   0xD7EEFF,
+                                   0xE6FFE9,
+                                   0xFFD5EC,
+                                   0xFFFFDD]
 
     override func viewDidLoad() {
         super.viewDidLoad()

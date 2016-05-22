@@ -28,6 +28,9 @@ class ChangeMasterPasswordView: UIViewController {
         
         inputPassword1.secureTextEntry = true
         inputPassword2.secureTextEntry = true
+        
+        inputPassword1.placeholder = NSLocalizedString("input password", comment: "")
+        inputPassword2.placeholder = NSLocalizedString("input password(check)", comment: "")
     }
     
     // アプリがバックグラウンドになった場合
@@ -53,6 +56,9 @@ class ChangeMasterPasswordView: UIViewController {
         if inputPassword1.text != inputPassword2.text {
             // 入力が違っていたらエラー
             checkResultLabel.text = NSLocalizedString("Input password is different!", comment: "")
+        } else if inputPassword1.text == "" {
+            // パスワードが空ならエラー
+            checkResultLabel.text = NSLocalizedString("Password is empty!", comment: "")
         } else if masterPassword == inputPassword1.text {
             // マスターパスワードと同じだったらエラー
             checkResultLabel.text = NSLocalizedString("It is same as the master password.", comment: "")

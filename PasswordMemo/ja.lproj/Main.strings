@@ -71,9 +71,6 @@
 /* Class = "UILabel"; text = "Account ID"; ObjectID = "f7g-fP-Iq9"; */
 "f7g-fP-Iq9.text" = "アカウントID";
 
-/* Class = "UILabel"; text = "Copyright (c) 2016 Koichi Inoue"; ObjectID = "g3e-GO-Chj"; */
-"g3e-GO-Chj.text" = "Copyright (c) 2016 Koichi Inoue";
-
 /* Class = "UILabel"; text = "Password"; ObjectID = "j6T-Ke-xWK"; */
 "j6T-Ke-xWK.text" = "パスワード";
 

@@ -24,5 +24,14 @@
 "Edit Data" = "データ編集";
 "input memo" = "メモを入力";
 "Copy to clipboard." = "クリップボードにコピーしました";
+"input password" = "パスワードを入力";
+"input password(check)" = "パスワードを入力(確認)";
 "Input password is different!" = "入力した2つのパスワードが異なります";
 "It is same as the master password." = "現在のマスターパスワードと同じです";
+"white" = "ホワイト";
+"gray" = "グレー";
+"brown" = "ブラウン";
+"blue" = "ブルー";
+"green" = "グリーン";
+"pink" = "ピンク";
+"yellow" = "イエロー";
