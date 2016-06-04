@@ -28,7 +28,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ecD-2Z-eId">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t8j-HB-ySc">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t8j-HB-ySc">
                                         <rect key="frame" x="206" y="253" width="188" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="188" id="0Qu-yI-TAz"/>
@@ -41,7 +41,7 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="37B-Kz-HmA"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4l-O5-IFo">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4l-O5-IFo">
                                         <rect key="frame" x="278" y="291" width="45" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Login"/>
@@ -49,13 +49,13 @@
                                             <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rpn-zr-Whb"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSY-bl-xQJ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSY-bl-xQJ">
                                         <rect key="frame" x="281" y="224" width="38" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsN-Yl-zho">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsN-Yl-zho">
                                         <rect key="frame" x="260" y="350" width="80" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Touch ID"/>
@@ -65,11 +65,11 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="t8j-HB-ySc" firstAttribute="centerY" secondItem="ecD-2Z-eId" secondAttribute="centerY" id="HdQ-Sz-vEY"/>
                                     <constraint firstItem="K4l-O5-IFo" firstAttribute="top" secondItem="t8j-HB-ySc" secondAttribute="bottom" constant="8" id="MXS-4G-6fl"/>
                                     <constraint firstItem="MSY-bl-xQJ" firstAttribute="centerX" secondItem="ecD-2Z-eId" secondAttribute="centerX" id="S6u-dA-9lg"/>
                                     <constraint firstItem="K4l-O5-IFo" firstAttribute="centerX" secondItem="ecD-2Z-eId" secondAttribute="centerX" id="U0f-IW-sg8"/>
                                     <constraint firstItem="AsN-Yl-zho" firstAttribute="centerX" secondItem="ecD-2Z-eId" secondAttribute="centerX" id="cQG-Js-YQs"/>
+                                    <constraint firstItem="t8j-HB-ySc" firstAttribute="centerY" secondItem="ecD-2Z-eId" secondAttribute="centerY" id="duW-FJ-rLP"/>
                                     <constraint firstItem="AsN-Yl-zho" firstAttribute="top" secondItem="K4l-O5-IFo" secondAttribute="bottom" constant="25" id="kVj-Qp-dTo"/>
                                     <constraint firstItem="t8j-HB-ySc" firstAttribute="centerX" secondItem="ecD-2Z-eId" secondAttribute="centerX" id="lL5-dH-mAc"/>
                                     <constraint firstItem="t8j-HB-ySc" firstAttribute="top" secondItem="MSY-bl-xQJ" secondAttribute="bottom" constant="8" id="n9V-ew-5vg"/>
@@ -88,6 +88,7 @@
                             <constraint firstItem="FIV-4A-GRJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="iDd-l5-fLt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ecD-2Z-eId" secondAttribute="bottom" id="qyc-wb-ph3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ecD-2Z-eId" secondAttribute="trailing" constant="-20" id="v4w-o0-PZa"/>
+                            <constraint firstItem="ecD-2Z-eId" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zK5-yK-hvb"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Bjw-bs-1na" appends="YES" id="py0-I8-iRF"/>
@@ -298,6 +299,9 @@
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1i-9k-jZA">
                                 <rect key="frame" x="0.0" y="551" width="600" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="VYl-vs-P7O"/>
+                                </constraints>
                                 <items/>
                             </tabBar>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2W-Bx-OJP">
@@ -785,6 +789,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0bf-QV-eS6"/>
+        <segue reference="TtF-EX-j0J"/>
     </inferredMetricsTieBreakers>
 </document>
