@@ -335,13 +335,16 @@
 					B3964C3E1C54724D00420B4F = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = WFA5SJLW78;
+						LastSwiftMigration = 0800;
 					};
 					B3964C551C54724D00420B4F = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 						TestTargetID = B3964C3E1C54724D00420B4F;
 					};
 					B3964C601C54724D00420B4F = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 						TestTargetID = B3964C3E1C54724D00420B4F;
 					};
 				};
@@ -633,6 +636,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = highcom.PasswordMemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -651,6 +655,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = highcom.PasswordMemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -662,6 +667,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = highcom.PasswordMemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PasswordMemo.app/PasswordMemo";
 			};
 			name = Debug;
@@ -674,6 +680,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = highcom.PasswordMemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PasswordMemo.app/PasswordMemo";
 			};
 			name = Release;
@@ -685,6 +692,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = highcom.PasswordMemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = PasswordMemo;
 				USES_XCTRUNNER = YES;
 			};
@@ -697,6 +705,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = highcom.PasswordMemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = PasswordMemo;
 				USES_XCTRUNNER = YES;
 			};
