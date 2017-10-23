@@ -14,47 +14,47 @@ class SettingMenuView: UIViewController {
     @IBOutlet weak var TouchIDSw: UISwitch!
 
     var now: NSDate = NSDate()
-    var deltaTime: NSTimeInterval = 0.0
+    var deltaTime: TimeInterval = 0.0
     
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let userDefaults = UserDefaults.standard
     var EnableTouchID: Bool?
     var EnableDataDelete: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SettingMenuView.enterBackground(_:)), name:"applicationDidEnterBackground", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SettingMenuView.enterForeground(_:)), name:"applicationWillEnterForeground", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SettingMenuView.enterBackground(_:)), name:NSNotification.Name(rawValue: "applicationDidEnterBackground"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SettingMenuView.enterForeground(_:)), name:NSNotification.Name(rawValue: "applicationWillEnterForeground"), object: nil)
         self.view.backgroundColor = ColorData.getSelectColor()
         
         // データ削除機能設定
-        DataDeleteSw.addTarget(self, action: #selector(SettingMenuView.onClickDataDeleteSwitch(_:)), forControlEvents: UIControlEvents.ValueChanged)
-        EnableDataDelete = userDefaults.objectForKey("EnableDataDelete") as? Bool
+        DataDeleteSw.addTarget(self, action: #selector(SettingMenuView.onClickDataDeleteSwitch(_:)), for: UIControlEvents.valueChanged)
+        EnableDataDelete = userDefaults.object(forKey: "EnableDataDelete") as? Bool
         if EnableDataDelete == nil {
             EnableDataDelete = false
         }
-        DataDeleteSw.on = EnableDataDelete!
+        DataDeleteSw.isOn = EnableDataDelete!
         
         // タッチIDの有効・無効設定
-        TouchIDSw.addTarget(self, action: #selector(SettingMenuView.onClickTouchIDSwitch(_:)), forControlEvents: UIControlEvents.ValueChanged)
-        EnableTouchID = userDefaults.objectForKey("EnableTouchID") as? Bool
+        TouchIDSw.addTarget(self, action: #selector(SettingMenuView.onClickTouchIDSwitch(_:)), for: UIControlEvents.valueChanged)
+        EnableTouchID = userDefaults.object(forKey: "EnableTouchID") as? Bool
         if EnableTouchID == nil {
             EnableTouchID = false
         }
-        TouchIDSw.on = EnableTouchID!
+        TouchIDSw.isOn = EnableTouchID!
     }
     
     // アプリがバックグラウンドになった場合
-    func enterBackground(notification: NSNotification){
+    func enterBackground(_ notification: Notification?){
         now = NSDate()
     }
     
     // アプリがフォアグラウンドになった場合
-    func enterForeground(notification: NSNotification){
-        deltaTime = NSDate().timeIntervalSinceDate(now)
+    func enterForeground(_ notification: Notification?){
+        deltaTime = NSDate().timeIntervalSince(now as Date)
         // バックグラウンドになってから2分以上経過した場合はログアウトする
         if (deltaTime > 120) {
-            let targetViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginMenu")
-            self.presentViewController( targetViewController, animated: true, completion: nil)
+            let targetViewController = self.storyboard!.instantiateViewController(withIdentifier: "LoginMenu")
+            self.present( targetViewController, animated: true, completion: nil)
         }
     }
     
@@ -63,21 +63,21 @@ class SettingMenuView: UIViewController {
     }
     
     // データ削除機能スイッチ
-    func onClickDataDeleteSwitch(sender: UISwitch) {
-        if sender.on {
-            userDefaults.setObject(true, forKey: "EnableDataDelete")
+    func onClickDataDeleteSwitch(_ sender: UISwitch) {
+        if sender.isOn {
+            userDefaults.set(true, forKey: "EnableDataDelete")
         } else {
-            userDefaults.setObject(false, forKey: "EnableDataDelete")
+            userDefaults.set(false, forKey: "EnableDataDelete")
         }
         userDefaults.synchronize()
     }
     
     // タッチID有効スイッチ
-    func onClickTouchIDSwitch(sender: UISwitch) {
-        if sender.on {
-            userDefaults.setObject(true, forKey: "EnableTouchID")
+    func onClickTouchIDSwitch(_ sender: UISwitch) {
+        if sender.isOn {
+            userDefaults.set(true, forKey: "EnableTouchID")
         } else {
-            userDefaults.setObject(false, forKey: "EnableTouchID")
+            userDefaults.set(false, forKey: "EnableTouchID")
         }
         userDefaults.synchronize()
     }

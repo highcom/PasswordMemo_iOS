@@ -15,43 +15,43 @@ class ChangeMasterPasswordView: UIViewController {
     @IBOutlet weak var checkResultLabel: UILabel!
     
     var now: NSDate = NSDate()
-    var deltaTime: NSTimeInterval = 0.0
+    var deltaTime: TimeInterval = 0.0
     
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let userDefaults = UserDefaults.standard
     var val: ObjCBool = ObjCBool.init(true)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChangeMasterPasswordView.enterBackground(_:)), name:"applicationDidEnterBackground", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChangeMasterPasswordView.enterForeground(_:)), name:"applicationWillEnterForeground", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChangeMasterPasswordView.enterBackground(_:)), name:NSNotification.Name(rawValue: "applicationDidEnterBackground"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChangeMasterPasswordView.enterForeground(_:)), name:NSNotification.Name(rawValue: "applicationWillEnterForeground"), object: nil)
         self.view.backgroundColor = ColorData.getSelectColor()
         
-        inputPassword1.secureTextEntry = true
-        inputPassword2.secureTextEntry = true
+        inputPassword1.isSecureTextEntry = true
+        inputPassword2.isSecureTextEntry = true
         
         inputPassword1.placeholder = NSLocalizedString("input password", comment: "")
         inputPassword2.placeholder = NSLocalizedString("input password(check)", comment: "")
     }
     
     // アプリがバックグラウンドになった場合
-    func enterBackground(notification: NSNotification){
+    func enterBackground(_ notification: NSNotification){
         now = NSDate()
     }
     
     // アプリがフォアグラウンドになった場合
-    func enterForeground(notification: NSNotification){
-        deltaTime = NSDate().timeIntervalSinceDate(now)
+    func enterForeground(_ notification: NSNotification){
+        deltaTime = NSDate().timeIntervalSince(now as Date)
         // バックグラウンドになってから2分以上経過した場合はログアウトする
         if (deltaTime > 120) {
-            let targetViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginMenu")
-            self.presentViewController( targetViewController, animated: true, completion: nil)
+            let targetViewController = self.storyboard!.instantiateViewController(withIdentifier: "LoginMenu")
+            self.present( targetViewController, animated: true, completion: nil)
         }
     }
     
     // パスワード入力チェック
     @IBAction func checkPassword(sender: AnyObject) {
         var masterPassword: String?
-        masterPassword = userDefaults.secureStringForKey("masterPw", valid: &val)
+        masterPassword = userDefaults.secureString(forKey: "masterPw", valid: &val)
         //masterPassword = userDefaults.objectForKey("masterPw") as? String
         if inputPassword1.text != inputPassword2.text {
             // 入力が違っていたらエラー
@@ -68,7 +68,7 @@ class ChangeMasterPasswordView: UIViewController {
             //userDefaults.setObject(inputPassword1.text, forKey: "masterPw")
             userDefaults.synchronize()
             // 画面を終了する
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         }
     }
     

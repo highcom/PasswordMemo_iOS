@@ -12,10 +12,10 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     @IBOutlet weak var passwordListView: UITableView!
 
     var now: NSDate = NSDate()
-    var deltaTime: NSTimeInterval = 0.0
+    var deltaTime: TimeInterval = 0.0
 
-    var locale = NSLocale.currentLocale()
-    let dateFormatter = NSDateFormatter()
+    var locale = NSLocale.current
+    let dateFormatter = DateFormatter()
     var editRow: Int = 0
     // 画面遷移時の状態
     var state = STATE.ST_NONE
@@ -27,38 +27,38 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PasswordListView.enterBackground(_:)), name:"applicationDidEnterBackground", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PasswordListView.enterForeground(_:)), name:"applicationWillEnterForeground", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(PasswordListView.enterBackground(_:)), name:NSNotification.Name(rawValue: "applicationDidEnterBackground"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(PasswordListView.enterForeground(_:)), name:NSNotification.Name(rawValue: "applicationWillEnterForeground"), object: nil)
         self.view.backgroundColor = ColorData.getSelectColor()
-        passwordListView.backgroundColor = UIColor.clearColor()
+        passwordListView.backgroundColor = UIColor.clear
         // Do any additional setup after loading the view, typically from a nib.
         
         PasswordEntity.sharedPasswordEntity.tableSearchText = ""
         
         // 日付表示フォーマットを指定
-        dateFormatter.locale = NSLocale(localeIdentifier: locale.description)
+        dateFormatter.locale = NSLocale(localeIdentifier: locale.description) as Locale!
         dateFormatter.dateFormat = "yyyy/MM/dd"
         
         PasswordEntity.sharedPasswordEntity.readPasswordData()
     }
     
     // アプリがバックグラウンドになった場合
-    func enterBackground(notification: NSNotification){
+    func enterBackground(_ notification: NSNotification){
         now = NSDate()
     }
     
     // アプリがフォアグラウンドになった場合
-    func enterForeground(notification: NSNotification){
-        deltaTime = NSDate().timeIntervalSinceDate(now)
+    func enterForeground(_ notification: NSNotification){
+        deltaTime = NSDate().timeIntervalSince(now as Date)
         // バックグラウンドになってから2分以上経過した場合はログアウトする
         if (deltaTime > 120) {
-            let targetViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginMenu")
-            self.presentViewController( targetViewController, animated: true, completion: nil)
+            let targetViewController = self.storyboard!.instantiateViewController(withIdentifier: "LoginMenu")
+            self.present( targetViewController, animated: true, completion: nil)
         }
     }
 
     // テーブルの行数
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var tableCount = 0
         // 検索中か
         if PasswordEntity.sharedPasswordEntity.tableSearchText == "" {
@@ -71,10 +71,10 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     // テーブルの表示内容
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = passwordListView.dequeueReusableCellWithIdentifier("PasswordCell")! as UITableViewCell
-        cell.backgroundColor = UIColor.clearColor()
-        let pwItem = PasswordEntity.sharedPasswordEntity.getItems(indexPath.row)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = passwordListView.dequeueReusableCell(withIdentifier: "PasswordCell")! as UITableViewCell
+        cell.backgroundColor = UIColor.clear
+        let pwItem = PasswordEntity.sharedPasswordEntity.getItems(row: indexPath.row)
         
         // タイトルタグを取得
         let title = cell.viewWithTag(1) as! UILabel
@@ -86,7 +86,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
         if date == nil {
             updateDate.text = ""
         } else {
-            updateDate.text = dateFormatter.stringFromDate(date!)
+            updateDate.text = dateFormatter.string(from: date! as Date)
         }
         
         return cell
@@ -96,31 +96,31 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         // 削除のとき.
-        if editingStyle == UITableViewCellEditingStyle.Delete {
+        if editingStyle == UITableViewCellEditingStyle.delete {
             
             // 削除するセルのdisplayOrderを保持する
-            let delValue = PasswordEntity.sharedPasswordEntity.getItems(indexPath.row).displayOrder!.integerValue
+            let delValue = PasswordEntity.sharedPasswordEntity.getItems(row: indexPath.row).displayOrder!.intValue
             
             // CoreDataからレコードをを削除する
-            PasswordEntity.sharedPasswordEntity.deletePasswordData(PasswordEntity.sharedPasswordEntity.getItems(indexPath.row) as PasswordEntity)
+            PasswordEntity.sharedPasswordEntity.deletePasswordData(object: PasswordEntity.sharedPasswordEntity.getItems(row: indexPath.row) as PasswordEntity)
             
             // 指定されたセルのオブジェクトをmyItemsから削除する.
-            PasswordEntity.sharedPasswordEntity.passwordItems.removeObjectAtIndex(delValue)
+            PasswordEntity.sharedPasswordEntity.passwordItems.removeObject(at: delValue)
             if PasswordEntity.sharedPasswordEntity.tableSearchText != "" {
-                PasswordEntity.sharedPasswordEntity.searchItems.removeObjectAtIndex(indexPath.row)
+                PasswordEntity.sharedPasswordEntity.searchItems.removeObject(at: indexPath.row)
             }
             
             // 削除したセル以降のdisplayOrderをつめる
             for i in delValue ..< PasswordEntity.sharedPasswordEntity.passwordItems.count {
                 let buffItem = PasswordEntity.sharedPasswordEntity.passwordItems[i] as! PasswordEntity
-                buffItem.displayOrder = buffItem.displayOrder!.integerValue - 1
+                buffItem.displayOrder = buffItem.displayOrder!.intValue - 1 as NSNumber
             }
             
             // TableViewを再読み込み.
             tableView.reloadData()
             
             // データ数が0になった場合は編集モードをキャンセルする
-            if PasswordEntity.sharedPasswordEntity.passwordItems.count == 0 && editing {
+            if PasswordEntity.sharedPasswordEntity.passwordItems.count == 0 && isEditing {
                 super.setEditing(false, animated: true)
                 tableView.setEditing(false, animated: true)
             }
@@ -132,15 +132,15 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
         // 選択された行数を設定
         editRow = indexPath.row
         state = STATE.ST_EDIT
-        self.performSegueWithIdentifier("referenceViewSegue", sender: nil)
+        self.performSegue(withIdentifier: "referenceViewSegue", sender: nil)
     }
     
     // 参照画面遷移時に値を渡す
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "referenceViewSegue" {
             // 選択したテーブルのデータを詳細画面に渡す
-            let editData = PasswordEntity.sharedPasswordEntity.getItems(editRow)
-            let newVC = segue.destinationViewController as! PasswordReferenceView
+            let editData = PasswordEntity.sharedPasswordEntity.getItems(row: editRow)
+            let newVC = segue.destination as! PasswordReferenceView
             newVC.titleName = editData.titleName!
             newVC.accountName = editData.accountID!
             newVC.password = editData.password!
@@ -153,7 +153,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
         // ステートを追加状態にする
         state = STATE.ST_ADD
         // データ入力のため詳細画面へ遷移する
-        self.performSegueWithIdentifier("inputViewSegue", sender: nil)
+        self.performSegue(withIdentifier: "inputViewSegue", sender: nil)
     }
     
     // 編集ボタン
@@ -170,7 +170,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
             return
         }
         
-        if editing {
+        if isEditing {
             super.setEditing(false, animated: true)
             passwordListView.setEditing(false, animated: true)
         } else {
@@ -200,18 +200,19 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
             isMoveDir = false
         }
         
-        for var i = minIndex; i <= maxIndex; i += 1 {
+        //for var i = minIndex; i <= maxIndex; i += 1 {
+        for i in minIndex..<maxIndex+1 {
             var newOrder = 0
             if i == srcIndex {
                 newOrder = desIndex
             } else if isMoveDir {
                 let buffItem = PasswordEntity.sharedPasswordEntity.passwordItems[i] as! PasswordEntity
-                newOrder = (buffItem.displayOrder?.integerValue)! - 1
+                newOrder = (buffItem.displayOrder?.intValue)! - 1
             } else {
                 let buffItem = PasswordEntity.sharedPasswordEntity.passwordItems[i] as! PasswordEntity
-                newOrder = (buffItem.displayOrder?.integerValue)! + 1
+                newOrder = (buffItem.displayOrder?.intValue)! + 1
             }
-            PasswordEntity.sharedPasswordEntity.passwordItems[i].setValue(newOrder, forKey: "displayOrder")
+            (PasswordEntity.sharedPasswordEntity.passwordItems[i] as AnyObject).setValue(newOrder, forKey: "displayOrder")
         }
         // 現在の状態を保存する
         PasswordEntity.sharedPasswordEntity.savePasswordData()
@@ -232,7 +233,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     // 検索バー入力開始時
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         // 検索バーを伸ばす
-        searchBar.frame = CGRectMake(searchBar.frame.origin.x, searchBar.frame.origin.y, searchBar.frame.width + 70, searchBar.frame.height)
+        searchBar.frame = CGRect(x: searchBar.frame.origin.x, y: searchBar.frame.origin.y, width: searchBar.frame.width + 70, height: searchBar.frame.height)
         // キャンセルボタンを有効化する
         searchBar.showsCancelButton = true
         // AutoResizeを無効化する
@@ -276,7 +277,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
         // キャンセルボタンを無効化する
         searchBar.showsCancelButton = false
         // 検索バーを元のサイズに戻す
-        searchBar.frame = CGRectMake(searchBar.frame.origin.x, searchBar.frame.origin.y, searchBar.frame.width - 60, searchBar.frame.height)
+        searchBar.frame = CGRect(x: searchBar.frame.origin.x, y: searchBar.frame.origin.y, width: searchBar.frame.width - 60, height: searchBar.frame.height)
         // AutoResizeを有効化する
         searchBar.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -289,7 +290,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     
     // 詳細画面の完了ボタン
     @IBAction func doneButton(segue: UIStoryboardSegue) {
-        let inputData = segue.sourceViewController as! PasswordInputView
+        let inputData = segue.source as! PasswordInputView
         // 詳細画面の入力データを受け取る
         let titleName = inputData.titleField.text
         let accountName = inputData.accountField.text
@@ -299,10 +300,10 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
         // infoボタンを押されて編集の場合はレコードを更新にするよう処理を分ける
         if state == STATE.ST_ADD {
             // 詳細画面で入力したデータを追加
-            PasswordEntity.sharedPasswordEntity.writePasswordData(PasswordEntity.sharedPasswordEntity.passwordItems.count, title: titleName!, account: accountName!, password: password!, memo: memo!)
+            PasswordEntity.sharedPasswordEntity.writePasswordData(order: PasswordEntity.sharedPasswordEntity.passwordItems.count, title: titleName!, account: accountName!, password: password!, memo: memo!)
         } else if state == STATE.ST_EDIT {
             // 詳細画面で入力したデータで更新
-            PasswordEntity.sharedPasswordEntity.updatePasswordData(editRow, title: titleName!, account: accountName!, password: password!, memo: memo!)
+            PasswordEntity.sharedPasswordEntity.updatePasswordData(editRow: editRow, title: titleName!, account: accountName!, password: password!, memo: memo!)
         } else {
             NSLog("state err!")
         }

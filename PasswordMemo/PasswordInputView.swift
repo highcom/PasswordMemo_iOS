@@ -18,7 +18,7 @@ class PasswordInputView: UIViewController {
     @IBOutlet weak var scvBackGround: UIScrollView!
     
     var now: NSDate = NSDate()
-    var deltaTime: NSTimeInterval = 0.0
+    var deltaTime: TimeInterval = 0.0
     
     var titleName: String = ""
     var accountName: String = ""
@@ -28,12 +28,12 @@ class PasswordInputView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PasswordInputView.enterBackground(_:)), name:"applicationDidEnterBackground", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PasswordInputView.enterForeground(_:)), name:"applicationWillEnterForeground", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(PasswordInputView.enterBackground(_:)), name:NSNotification.Name(rawValue: "applicationDidEnterBackground"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(PasswordInputView.enterForeground(_:)), name:NSNotification.Name(rawValue: "applicationWillEnterForeground"), object: nil)
         self.view.backgroundColor = ColorData.getSelectColor()
         // Do any additional setup after loading the view.
         memoTextView.layer.borderWidth = 0.5
-        memoTextView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        memoTextView.layer.borderColor = UIColor.lightGray.cgColor
         memoTextView.layer.cornerRadius = 5
         
         if titleName != "" {
@@ -47,22 +47,22 @@ class PasswordInputView: UIViewController {
         // メモが何も入力されていない場合はプレースホルダーを表示
         memoTextView.text = memo
         if memoTextView.text.characters.count == 0 {
-            memoTextView.placeHolder = NSLocalizedString("input memo", comment: "")
+            memoTextView.placeHolder = NSLocalizedString("input memo", comment: "") as NSString
         }
     }
     
     // アプリがバックグラウンドになった場合
-    func enterBackground(notification: NSNotification){
+    func enterBackground(_ notification: NSNotification){
         now = NSDate()
     }
     
     // アプリがフォアグラウンドになった場合
-    func enterForeground(notification: NSNotification){
-        deltaTime = NSDate().timeIntervalSinceDate(now)
+    func enterForeground(_ notification: NSNotification){
+        deltaTime = NSDate().timeIntervalSince(now as Date)
         // バックグラウンドになってから2分以上経過した場合はログアウトする
         if (deltaTime > 120) {
-            let targetViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginMenu")
-            self.presentViewController( targetViewController, animated: true, completion: nil)
+            let targetViewController = self.storyboard!.instantiateViewController(withIdentifier: "LoginMenu")
+            self.present( targetViewController, animated: true, completion: nil)
         }
     }
     
@@ -82,8 +82,8 @@ class PasswordInputView: UIViewController {
     func handleKeyboardWillShowNotification(notification: NSNotification) {
         
         let userInfo = notification.userInfo!
-        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-        let myBoundSize: CGSize = UIScreen.mainScreen().bounds.size
+        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let myBoundSize: CGSize = UIScreen.main.bounds.size
         
         let txtLimit = textFrame.origin.y + textFrame.height + 72.0
         let kbdLimit = myBoundSize.height - keyboardScreenEndFrame.size.height
@@ -99,21 +99,21 @@ class PasswordInputView: UIViewController {
     }
     
     // キーボードが表示された時
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.addObserver(self, selector: #selector(ViewController.handleKeyboardWillShowNotification(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(ViewController.handleKeyboardWillHideNotification(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(ViewController.handleKeyboardWillShowNotification(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(ViewController.handleKeyboardWillHideNotification(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     // キーボードが閉じられた時
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-        notificationCenter.removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notificationCenter.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     // タイトル入力でReturn

@@ -13,9 +13,9 @@ class SelectColorView: UIViewController {
     @IBOutlet weak var colorPicker: UIPickerView!
 
     var now: NSDate = NSDate()
-    var deltaTime: NSTimeInterval = 0.0
+    var deltaTime: TimeInterval = 0.0
     
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let userDefaults = UserDefaults.standard
     var selectColorRow: Int = 0
     var colorNameArray: NSArray = [NSLocalizedString("white", comment: ""),
                                    NSLocalizedString("gray", comment: ""),
@@ -34,13 +34,13 @@ class SelectColorView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SelectColorView.enterBackground(_:)), name:"applicationDidEnterBackground", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SelectColorView.enterForeground(_:)), name:"applicationWillEnterForeground", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SelectColorView.enterBackground(_:)), name:NSNotification.Name(rawValue: "applicationDidEnterBackground"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SelectColorView.enterForeground(_:)), name:NSNotification.Name(rawValue: "applicationWillEnterForeground"), object: nil)
         self.view.backgroundColor = ColorData.getSelectColor()
         
         // 保存されたカラーコードと同じ値のrowを取得する
         selectColorRow = 0
-        var colorCodeData = userDefaults.objectForKey("selectColor") as? Int
+        var colorCodeData = userDefaults.object(forKey: "selectColor") as? Int
         if colorCodeData == nil {
             colorCodeData = 0xFFFFFF
         }
@@ -61,17 +61,17 @@ class SelectColorView: UIViewController {
     }
     
     // アプリがバックグラウンドになった場合
-    func enterBackground(notification: NSNotification){
+    func enterBackground(_ notification: NSNotification){
         now = NSDate()
     }
     
     // アプリがフォアグラウンドになった場合
-    func enterForeground(notification: NSNotification){
-        deltaTime = NSDate().timeIntervalSinceDate(now)
+    func enterForeground(_ notification: NSNotification){
+        deltaTime = NSDate().timeIntervalSince(now as Date)
         // バックグラウンドになってから2分以上経過した場合はログアウトする
         if (deltaTime > 120) {
-            let targetViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginMenu")
-            self.presentViewController( targetViewController, animated: true, completion: nil)
+            let targetViewController = self.storyboard!.instantiateViewController(withIdentifier: "LoginMenu")
+            self.present( targetViewController, animated: true, completion: nil)
         }
     }
     
@@ -92,13 +92,13 @@ class SelectColorView: UIViewController {
     
     // 選択時
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.view.backgroundColor = ColorData.setHexColor(colorCodeArray[row] as! Int)
+        self.view.backgroundColor = ColorData.setHexColor(hex: colorCodeArray[row] as! Int)
         selectColorRow = row
     }
     
     // 完了時に選択した色を保存する
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        userDefaults.setObject(colorCodeArray[selectColorRow] as! Int, forKey: "selectColor")
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        userDefaults.set(colorCodeArray[selectColorRow] as! Int, forKey: "selectColor")
         userDefaults.synchronize()
     }
 }
@@ -114,7 +114,7 @@ class ColorData {
     
     // 保存された色の値からUIColorを取得する
     static func getSelectColor() -> UIColor {
-        var hex = NSUserDefaults.standardUserDefaults().objectForKey("selectColor") as? Int
+        var hex = UserDefaults.standard.object(forKey: "selectColor") as? Int
         if hex == nil {
             hex = 0xFFFFFF
         }

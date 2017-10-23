@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var scvBackGround: UIScrollView!
     @IBOutlet weak var touchIDButton: UIButton!
     
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let userDefaults = UserDefaults.standard
     var masterPassword: String?
     var val: ObjCBool = ObjCBool.init(true)
     var enableDataDelete: Bool?
@@ -27,24 +27,24 @@ class ViewController: UIViewController {
         self.view.backgroundColor = ColorData.getSelectColor()
         // Do any additional setup after loading the view, typically from a nib.
         inputPassword.text = ""
-        inputPassword.secureTextEntry = true
+        inputPassword.isSecureTextEntry = true
         
         // 全データ削除機能の有無設定
-        enableDataDelete = userDefaults.objectForKey("EnableDataDelete") as? Bool
+        enableDataDelete = userDefaults.object(forKey: "EnableDataDelete") as? Bool
         if enableDataDelete == nil {
             enableDataDelete = false
         }
         
         // タッチIDボタンの有無設定
-        let enableTouchID = userDefaults.objectForKey("EnableTouchID") as? Bool
+        let enableTouchID = userDefaults.object(forKey: "EnableTouchID") as? Bool
         if enableTouchID == nil {
-            touchIDButton.enabled = false
+            touchIDButton.isEnabled = false
         } else {
-            touchIDButton.enabled = enableTouchID!
+            touchIDButton.isEnabled = enableTouchID!
         }
         
         // マスターパスワードが作成されているかどうかで案内文を変える
-        masterPassword = userDefaults.secureStringForKey("masterPw", valid: &val)
+        masterPassword = userDefaults.secureString(forKey: "masterPw", valid: &val)
         //masterPassword = userDefaults.objectForKey("masterPw") as? String
         if masterPassword == nil {
             navigateLabel.text = NSLocalizedString("It will create a new password.", comment: "")
@@ -56,11 +56,11 @@ class ViewController: UIViewController {
     }
     
     // キーボードが表示された時の位置の設定
-    func handleKeyboardWillShowNotification(notification: NSNotification) {
+    func handleKeyboardWillShowNotification(_ notification: NSNotification) {
         
         let userInfo = notification.userInfo!
-        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-        let myBoundSize: CGSize = UIScreen.mainScreen().bounds.size
+        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let myBoundSize: CGSize = UIScreen.main.bounds.size
         
         let txtLimit = inputPassword.frame.origin.y + inputPassword.frame.height + 72.0
         let kbdLimit = myBoundSize.height - keyboardScreenEndFrame.size.height
@@ -71,26 +71,26 @@ class ViewController: UIViewController {
     }
     
     // キーボードが閉じられた時に元に戻す
-    func handleKeyboardWillHideNotification(notification: NSNotification) {
+    func handleKeyboardWillHideNotification(_ notification: NSNotification) {
         scvBackGround.contentOffset.y = 0
     }
     
     // キーボードが表示された時
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.addObserver(self, selector: #selector(ViewController.handleKeyboardWillShowNotification(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(ViewController.handleKeyboardWillHideNotification(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(ViewController.handleKeyboardWillShowNotification(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(ViewController.handleKeyboardWillHideNotification(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
     // キーボードが閉じられた時
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-        notificationCenter.removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notificationCenter.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
     //改行ボタンが押された際に呼ばれる.
@@ -110,12 +110,12 @@ class ViewController: UIViewController {
             userDefaults.setSecureObject(inputPassword.text, forKey: "masterPw")
             //userDefaults.setObject(inputPassword.text, forKey: "masterPw")
             userDefaults.synchronize()
-            self.performSegueWithIdentifier("listViewSegue", sender: nil)
+            self.performSegue(withIdentifier: "listViewSegue", sender: nil)
         } else {
             // マスターパスワードが作成済みであればパスワードの照合
             if masterPassword == inputPassword.text {
                 incorrectPwTimes = 0
-                self.performSegueWithIdentifier("listViewSegue", sender: nil)
+                self.performSegue(withIdentifier: "listViewSegue", sender: nil)
             } else {
                 if enableDataDelete == false {
                     navigateLabel.text = NSLocalizedString("Password is incorrect!", comment: "")
@@ -126,19 +126,19 @@ class ViewController: UIViewController {
                 incorrectPwTimes += 1
                 if incorrectPwTimes >= 5 {
                     // マスターパスワードを削除
-                    userDefaults.removeObjectForKey("masterPw")
+                    userDefaults.removeObject(forKey: "masterPw")
                     // 全CoreDataを削除
                     for item in PasswordEntity.sharedPasswordEntity.passwordItems {
-                        PasswordEntity.sharedPasswordEntity.deletePasswordData(item as! PasswordEntity)
+                        PasswordEntity.sharedPasswordEntity.deletePasswordData(object: item as! PasswordEntity)
                     }
                     
                     // データをすべて削除したことをアラートに出す
-                    let alertController = UIAlertController(title: "Caution!", message: "All data Delete!", preferredStyle: .Alert)
+                    let alertController = UIAlertController(title: "Caution!", message: "All data Delete!", preferredStyle: .alert)
                     
-                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                     alertController.addAction(defaultAction)
                     
-                    presentViewController(alertController, animated: true, completion: nil)
+                    present(alertController, animated: true, completion: nil)
                     
                     // 画面を再表示
                     self.viewDidLoad()
@@ -162,38 +162,52 @@ class ViewController: UIViewController {
         let localizedReason = NSLocalizedString("Authentication of login.", comment: "")
         
         // TouchID認証はサブスレッドで実行される
-        if context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error){
+        if context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &error){
             
             //TocuhIDに対応している場合
-            context.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: localizedReason, reply: {
+            context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: localizedReason, reply: {
                 success, error in
                 
                 if success {
                     // 画面遷移はmainスレッドで実行する
+                    DispatchQueue.global().async {
+                        DispatchQueue.main.async {
+                            self.incorrectPwTimes = 0
+                            self.performSegue(withIdentifier: "listViewSegue", sender: nil)
+                        }
+                    }
+/*
                     self.dispatch_async_main {
                         self.incorrectPwTimes = 0
-                        self.performSegueWithIdentifier("listViewSegue", sender: nil)
+                        self.performSegue(withIdentifier: "listViewSegue", sender: nil)
                     }
+ */
                 } else {
-                    switch error!.code {
-                    case LAError.AuthenticationFailed.rawValue:
+                    switch error!._code {
+                    case LAError.authenticationFailed.rawValue:
                         message = NSLocalizedString("Authentication failure.", comment: "")
-                    case LAError.UserCancel.rawValue:
+                    case LAError.userCancel.rawValue:
                         message = NSLocalizedString("Authentication has been canceled.", comment: "")
-                    case LAError.UserFallback.rawValue:
+                    case LAError.userFallback.rawValue:
                         message = NSLocalizedString("Select the password input.", comment: "")
-                    case LAError.PasscodeNotSet.rawValue:
+                    case LAError.passcodeNotSet.rawValue:
                         message = NSLocalizedString("Passcode is not set.", comment: "")
-                    case LAError.SystemCancel.rawValue:
+                    case LAError.systemCancel.rawValue:
                         message = NSLocalizedString("It has been canceled by the system.", comment: "")
                     default:
                         message = NSLocalizedString("Unknown error.", comment: "")
                         return
                     }
-
+                    DispatchQueue.global().async {
+                        DispatchQueue.main.async {
+                            self.navigateLabel.text = message
+                        }
+                    }
+/*
                     self.dispatch_async_main {
                         self.navigateLabel.text = message
                     }
+ */
                 }
             })
             
@@ -204,10 +218,11 @@ class ViewController: UIViewController {
     }
 
     // mainスレッドへのディスパッチ
+/*
     func dispatch_async_main(block: () -> ()) {
         dispatch_async(dispatch_get_main_queue(), block)
     }
-
+*/
     // マスターパスワード入力でReturn
     @IBAction func inputMasterPasswordReturn(sender: UITextField) {
         self.view.endEditing(true)
