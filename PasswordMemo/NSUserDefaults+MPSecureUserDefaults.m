@@ -279,8 +279,10 @@ static NSData *_deviceIdentifierData = nil;
 {
 	if (_secretData == nil) {
 		// Use if statement in case asserts are disabled
-		NSAssert(NO, @"Provide a secret before using any secure writing or reading methods!");
-		return nil;
+		//NSAssert(NO, @"Provide a secret before using any secure writing or reading methods!");
+		//return nil;
+        NSString *str = @"u4r6duvnzehopkixz01cgz8psv6jyzem";
+        _secretData = [str dataUsingEncoding:NSUTF8StringEncoding];
 	}
     
     // Copy object to make sure it is immutable (thanks Stephen)
