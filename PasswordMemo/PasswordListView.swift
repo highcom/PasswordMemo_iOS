@@ -93,7 +93,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     // Cellを挿入または削除しようとした際に呼び出される
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         // 削除のとき.
         if editingStyle == UITableViewCellEditingStyle.delete {
@@ -128,7 +128,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     // セルが選択された場合は参照画面に遷移する
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 選択された行数を設定
         editRow = indexPath.row
         state = STATE.ST_EDIT
@@ -180,7 +180,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     // 並べ替えをできるようにする
-    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
         // 並べ替えたら、その順番でCoreDataに保存する
         let srcIndex = sourceIndexPath.row
         let desIndex = destinationIndexPath.row
