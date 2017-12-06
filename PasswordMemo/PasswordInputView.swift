@@ -117,17 +117,17 @@ class PasswordInputView: UIViewController {
     }
     
     // タイトル入力でReturn
-    @IBAction func titleTextFieldReturn(sender: UITextField) {
+    @IBAction func titleTextFieldReturn(_ sender: UITextField) {
         self.accountField.becomeFirstResponder()
     }
     
     // アカウント入力でReturn
-    @IBAction func accountTextFieldReturn(sender: UITextField) {
+    @IBAction func accountTextFieldReturn(_ sender: UITextField) {
         self.passwordField.becomeFirstResponder()
     }
     
     // パスワード入力でReturn
-    @IBAction func passwordTextFieldReturn(sender: UITextField) {
+    @IBAction func passwordTextFieldReturn(_ sender: UITextField) {
         self.view.endEditing(true)
     }
 

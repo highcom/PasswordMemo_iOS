@@ -58,7 +58,7 @@ class PasswordReferenceView: UIViewController {
     }
     
     // テキストフィールドがタップされた場合
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         // クリップボードにコピー
         let clipboard = UIPasteboard.general
         clipboard.setValue(textField.text!, forPasteboardType: "public.text")

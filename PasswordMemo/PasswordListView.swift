@@ -221,7 +221,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     // 検索状態に応じてtableViewを並べ替え可能・不可能を設定
-    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // 検索中でない場合は並べ替えを可能とする
         if PasswordEntity.sharedPasswordEntity.tableSearchText == "" {
             return true
@@ -231,7 +231,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     // 検索バー入力開始時
-    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         // 検索バーを伸ばす
         searchBar.frame = CGRect(x: searchBar.frame.origin.x, y: searchBar.frame.origin.y, width: searchBar.frame.width + 70, height: searchBar.frame.height)
         // キャンセルボタンを有効化する
@@ -241,7 +241,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     }
 
     // 検索バー入力イベント
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // TODO: 検索バーで入力された文字列をCoreDataから検索
         // テキストが変更される毎に呼ばれる
         PasswordEntity.sharedPasswordEntity.tableSearchText = searchText
@@ -252,7 +252,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     // 検索ボタンが押下された場合
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         // キーボードをしまう
         self.view.endEditing(true)
         // CoreDataから検索する
@@ -262,7 +262,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     // キャンセルボタンが押下された場合
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         // キーボードをしまう
         self.view.endEditing(true)
         // 文字列を初期化する
@@ -273,7 +273,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     // 検索バー入力終了時
-    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         // キャンセルボタンを無効化する
         searchBar.showsCancelButton = false
         // 検索バーを元のサイズに戻す

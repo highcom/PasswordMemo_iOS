@@ -49,7 +49,7 @@ class ChangeMasterPasswordView: UIViewController {
     }
     
     // パスワード入力チェック
-    @IBAction func checkPassword(sender: AnyObject) {
+    @IBAction func checkPassword(_ sender: AnyObject) {
         var masterPassword: String?
         masterPassword = userDefaults.secureString(forKey: "masterPw", valid: &val)
         //masterPassword = userDefaults.objectForKey("masterPw") as? String
@@ -73,17 +73,17 @@ class ChangeMasterPasswordView: UIViewController {
     }
     
     // パスワード入力１でReturn
-    @IBAction func inputPassword1Return(sender: UITextField) {
+    @IBAction func inputPassword1Return(_ sender: UITextField) {
         self.inputPassword2.becomeFirstResponder()
     }
 
     // パスワード入力２でReturn
-    @IBAction func inputPassword2Return(sender: UITextField) {
+    @IBAction func inputPassword2Return(_ sender: UITextField) {
         self.view.endEditing(true)
     }
     
     // 画面がタップされたらキーボードをしまう
-    @IBAction func tapScreen(sender: UITapGestureRecognizer) {
+    @IBAction func tapScreen(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
 }
