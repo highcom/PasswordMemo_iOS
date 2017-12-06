@@ -58,7 +58,7 @@ class SettingMenuView: UIViewController {
         }
     }
     
-    @IBAction func returnSettingMenu(segue: UIStoryboardSegue) {
+    @IBAction func returnSettingMenu(_ segue: UIStoryboardSegue) {
         self.viewDidLoad()
     }
     
