@@ -255,7 +255,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="jVI-gc-CuI">
                                             <connections>
-                                                <action selector="tapAddButtonWithSender:" destination="NDh-ze-oct" id="Ncq-ib-ooE"/>
+                                                <action selector="tapAddButton:" destination="NDh-ze-oct" id="nCf-9D-FBp"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -360,6 +360,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="hgk-j3-0RY" secondAttribute="trailing" constant="-20" id="xTj-Nc-mI6"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="8YV-bG-uGM"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
@@ -391,12 +392,12 @@
                                     <navigationItem title="New Data" id="Avp-nA-Epx">
                                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="X83-4s-Y5W">
                                             <connections>
-                                                <segue destination="kZE-Zy-koX" kind="unwind" unwindAction="cancelButtonWithSegue:" id="AWd-bI-ypR"/>
+                                                <segue destination="kZE-Zy-koX" kind="unwind" unwindAction="cancelButton:" id="Sd4-iz-xrH"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="spk-HI-Xqq">
                                             <connections>
-                                                <segue destination="kZE-Zy-koX" kind="unwind" unwindAction="doneButtonWithSegue:" id="qbO-yT-mf5"/>
+                                                <segue destination="kZE-Zy-koX" kind="unwind" unwindAction="doneButton:" id="7ch-yO-XfN"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -410,7 +411,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="titleTextFieldReturn:" destination="eVO-df-lZV" eventType="editingDidEndOnExit" id="6rz-0v-Va4"/>
+                                            <action selector="titleTextFieldReturnWithSender:" destination="eVO-df-lZV" eventType="editingDidEnd" id="u7P-5S-wNI"/>
                                             <outlet property="delegate" destination="eVO-df-lZV" id="V0Q-h5-yXI"/>
                                         </connections>
                                     </textField>
@@ -425,7 +426,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="accountTextFieldReturn:" destination="eVO-df-lZV" eventType="editingDidEndOnExit" id="ifn-tN-zGA"/>
+                                            <action selector="accountTextFieldReturnWithSender:" destination="eVO-df-lZV" eventType="editingDidEnd" id="YpG-Tl-Uv3"/>
                                             <outlet property="delegate" destination="eVO-df-lZV" id="5yu-uL-Su3"/>
                                         </connections>
                                     </textField>
@@ -440,7 +441,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="passwordTextFieldReturn:" destination="eVO-df-lZV" eventType="editingDidEndOnExit" id="Jze-8U-dI2"/>
+                                            <action selector="passwordTextFieldReturnWithSender:" destination="eVO-df-lZV" eventType="editingDidEnd" id="SoV-jG-fU2"/>
                                             <outlet property="delegate" destination="eVO-df-lZV" id="kEI-Xz-LJg"/>
                                         </connections>
                                     </textField>
@@ -829,6 +830,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0bf-QV-eS6"/>
+        <segue reference="TtF-EX-j0J"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -67,19 +67,19 @@ class PasswordInputView: UIViewController {
     }
     
     // UITextFieldが編集された場合に呼ばれる
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         textFrame = textField.frame
         return true
     }
     
     // UITextViewが編集された場合に呼ばれる
-    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         textFrame = textView.frame
         return true
     }
     
     // キーボードが表示された時の位置の設定
-    func handleKeyboardWillShowNotification(notification: NSNotification) {
+    func handleKeyboardWillShowNotification(_ notification: NSNotification) {
         
         let userInfo = notification.userInfo!
         let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
@@ -94,7 +94,7 @@ class PasswordInputView: UIViewController {
     }
     
     // キーボードが閉じられた時に元に戻す
-    func handleKeyboardWillHideNotification(notification: NSNotification) {
+    func handleKeyboardWillHideNotification(_ notification: NSNotification) {
         scvBackGround.contentOffset.y = 0
     }
     

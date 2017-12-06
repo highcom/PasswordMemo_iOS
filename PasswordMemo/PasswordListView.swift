@@ -149,7 +149,7 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     }
 
     // 追加ボタン
-    @IBAction func tapAddButton(sender: AnyObject) {
+    @IBAction func tapAddButton(_ sender: Any) {
         // ステートを追加状態にする
         state = STATE.ST_ADD
         // データ入力のため詳細画面へ遷移する
@@ -283,13 +283,13 @@ class PasswordListView: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     // 入力画面のキャンセルボタン
-    @IBAction func cancelButton(segue: UIStoryboardSegue) {
+    @IBAction func cancelButton(_ segue: UIStoryboardSegue) {
         // ステートを初期状態に戻す
         state = STATE.ST_NONE
     }
     
     // 詳細画面の完了ボタン
-    @IBAction func doneButton(segue: UIStoryboardSegue) {
+    @IBAction func doneButton(_ segue: UIStoryboardSegue) {
         let inputData = segue.source as! PasswordInputView
         // 詳細画面の入力データを受け取る
         let titleName = inputData.titleField.text
